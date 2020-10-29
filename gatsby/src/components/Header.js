@@ -2,31 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderStyle = styled.header`
+  display: grid;
+  align-items: center;
   position: relative;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(113, 121, 9, 1) 35%,
-    rgba(255, 239, 0, 1) 100%
-  );
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
+  background: var(--fourth);
   text-align: center;
-  height: 100%;
-  padding: 10em 0;
+  overflow: hidden;
+  /* height: calc(100vh - 70px); */
+  padding: 5em 0 0em;
+  /* margin: 30px; */
   color: var(--white);
 
   h1 {
-    font-size: 70px;
+    font-family: "Varela Round", "sans-serif";
+    font-weight: 800;
+    font-size: 60px;
+  }
+
+  svg {
+    display: block;
   }
 `;
 
-export default function Header(props) {
+export default function Header({ children, headerText, helperText }) {
   return (
-    <HeaderStyle bgImg={props.bgImg}>
-      <h1>{props.headerText}</h1>
+    <HeaderStyle>
+      <div className="wrap-container">
+        <h1>{headerText}</h1>
+        <h2>{helperText}</h2>
+        {headerText === `Privātais bērnu dārzs "Zeltābele"` ? children : null}
+      </div>
     </HeaderStyle>
   );
 }

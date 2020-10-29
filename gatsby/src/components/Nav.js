@@ -3,42 +3,52 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const NavStyles = styled.nav`
-  margin: 0;
-  padding: 20px 0;
+  padding: 10px;
+  background: var(--fourth);
+
   ul {
-    padding: 0;
-    margin: 0;
     display: grid;
-    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    justify-items: right;
+    grid-template-columns: auto 1fr;
+    padding: 10px 30px;
+    margin: 0;
     list-style: none;
     text-align: center;
   }
 
   li {
+    color: var(--white);
     font-size: 20px;
+  }
+
+  .navigation {
+    display: flex;
+  }
+  .navigation li {
+    padding: 0px 20px;
+    margin: 0;
   }
 `;
 
-export default function Nav() {
+export default function Nav({ paths }) {
   return (
     <NavStyles>
-      <ul>
-        <li>
-          <Link to="/">Par Mums</Link>
-        </li>
-        <li>
-          <Link to="/studyplans">Mācību plāns</Link>
-        </li>
-        <li>
-          <Link to="/">ZELTĀBELE</Link>
-        </li>
-        <li>
-          <Link to="/gallery">Galerija</Link>
-        </li>
-        <li>
-          <Link to="/contacts">Sazniens ar Mums</Link>
-        </li>
-      </ul>
+      <div className="wrap-container">
+        <ul>
+          <li>
+            <Link to="/">ZELTĀBELE</Link>
+          </li>
+          <div className="navigation">
+            {paths.map((path, index) => {
+              return (
+                <li key={index}>
+                  <Link to={path.path}>{path.text}</Link>
+                </li>
+              );
+            })}
+          </div>
+        </ul>
+      </div>
     </NavStyles>
   );
 }
