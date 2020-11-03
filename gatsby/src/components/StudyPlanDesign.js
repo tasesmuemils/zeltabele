@@ -14,6 +14,12 @@ const StudyPanStyle = styled.div`
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
+    background-color: hsl(213.2142857142857, 48.275862068965516%, 45.490196078431374%);
+    background-color: rgb(17, 150, 160);
+    color: white;
+    margin: 5px 0 20px;
+    padding: 20px;
+    border-radius: 20px;
   }
 
   ul {
@@ -27,6 +33,19 @@ const StudyPanStyle = styled.div`
     text-align: center;
     padding: 3px;
     margin: 5px 20px;
+  }
+
+  .celebrations {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(143, 96, 201, 1);
+    box-shadow: rgba(143, 96, 201, 0.5) 0px 4px 15px;
+    color: white;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 20px;
   }
 `;
 
@@ -63,6 +82,11 @@ export function StudyPlanDesign({ plans }) {
                 <li>{plan.node.month_3.plan_3}</li>
               </ul>
             </div>
+          </div>
+          <div className="celebrations">
+            {plan.node.celebrations.map(item => {
+              return <p>{item}</p>;
+            })}
           </div>
         </StudyPanStyle>
       </div>

@@ -43,7 +43,7 @@ export function Branch() {
       <div className="wrap-container">
         <div className="branch-buttons">
           <div>
-            <Link to="/">
+            <Link to="/kanieru/kanieru_about">
               <button>Kaņieru iela</button>
             </Link>
           </div>

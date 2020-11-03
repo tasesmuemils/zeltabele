@@ -1,12 +1,12 @@
-import { graphql } from "gatsby";
 import React from "react";
+import { graphql } from "gatsby";
 import styled from "styled-components";
-import { ContentWrapper } from "../../components/ContentWrapper";
-import Header from "../../components/Header";
 import Nav from "../../components/Nav";
-import { MieraNav } from "../../components/Paths";
+import { KanieruNav } from "../../components/Paths";
+import Header from "../../components/Header";
+import { ContentWrapper } from "../../components/ContentWrapper";
 
-const MieraContactStyle = styled.div`
+const KanieruContactStyle = styled.div`
   display: grid;
   padding: 50px;
   grid-template-columns: repeat(2, 1fr);
@@ -36,29 +36,27 @@ const MieraContactStyle = styled.div`
   }
 `;
 
-export default function contacts({data}) {
-  const {nodes} = data.allSanityMieraContacts;
-  console.log(nodes[0]);
+export default function contacts(props) {
   return (
     <div>
-      <Nav paths={MieraNav} />
+      <Nav paths={KanieruNav} />
       <Header headerText="Saznies ar Mums"></Header>
       <div>
         <ContentWrapper>
           <div className="wrap-container">
-            <MieraContactStyle>
+            <KanieruContactStyle>
               <div>
                 <section>
                   <h2>Adrese</h2>
-                  <p>{nodes[0].address}</p>
+                  <p>test</p>
                 </section>
                 <section>
                   <h2>Telefons</h2>
-                  <p>{nodes[0].phone}</p>
+                  <p>test</p>
                 </section>
                 <section>
                   <h2>Darba laiks</h2>
-                  <p>{nodes[0].work_time}</p>
+                  <p>test</p>
                 </section>
               </div>
               <div>
@@ -78,7 +76,7 @@ export default function contacts({data}) {
                   </div>
                 </div>
               </div>
-            </MieraContactStyle>
+            </KanieruContactStyle>
           </div>
         </ContentWrapper>
       </div>
@@ -86,14 +84,14 @@ export default function contacts({data}) {
   );
 }
 
-export const query = graphql`
-  query  {
-    allSanityMieraContacts {
-      nodes {
-        address
-        phone
-        work_time
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   query  {
+//     allSanityMieraContacts {
+//       nodes {
+//         address
+//         phone
+//         work_time
+//       }
+//     }
+//   }
+// `;

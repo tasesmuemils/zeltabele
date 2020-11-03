@@ -4,20 +4,17 @@ import styled from "styled-components";
 import { Carousel, Modal } from "react-bootstrap";
 
 const GalleryStyle = styled.div`
-  /* margin: 10px; */
-  border: none;
   border-radius: 20px;
   padding: 20px;
-  background-color: var(--white);
-  opacity: 1;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25), 0px 6px 10px rgba(0, 0, 0, 0.22);
+  background-color: var(--fourth);
+  color: white;
+  box-shadow: rgba(0, 0, 0, 0.5) 2px 6px 6px;
 
   .image-wrapper {
     cursor: pointer;
   }
   .image-style {
     border-radius: 20px;
-    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22); */
   }
 
   h2 {
@@ -44,7 +41,6 @@ const StyledModal = styled(Modal)`
   }
 `;
 
-// Modal.setAppElement("#___gatsby");
 
 export function Gallery({ galleryData }) {
   const galleysCards = galleryData.map(gallery => {

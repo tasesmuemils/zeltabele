@@ -1,16 +1,16 @@
 import { graphql } from "gatsby";
 import React from "react";
+import Nav from "../../components/Nav";
+import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
 import { StudyPlanDesign } from "../../components/StudyPlanDesign";
-import { MieraNav } from "../../components/Paths";
-import Nav from "../../components/Nav";
-import { ContentWrapper } from "../../components/ContentWrapper";
+import { ContentWrapper } from '../../components/ContentWrapper';
 
-export default function mieraStudyPlan(props) {
-  const { edges } = props.data.allSanityMieraStudyPlans;
+export default function kanieruStudyPlan(props) {
+    const { edges } = props.data.allSanityKanieruStudyPlans;
   return (
     <>
-      <Nav paths={MieraNav} />
+      <Nav paths={KanieruNav} />
       <Header headerText={`Mācību plāns`} />
       <ContentWrapper>
         <StudyPlanDesign plans={edges} />
@@ -21,7 +21,7 @@ export default function mieraStudyPlan(props) {
 
 export const query = graphql`
   query {
-    allSanityMieraStudyPlans(sort: { fields: _createdAt }) {
+    allSanityKanieruStudyPlans(sort: { fields: _createdAt }) {
       edges {
         node {
           season

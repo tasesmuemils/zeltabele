@@ -21,7 +21,7 @@ export default function gallery(props) {
   return (
     <div>
       <Nav paths={MieraNav} />
-      <Header headerText="GALERIJA" />
+      <Header headerText="Galerija" />
       <GalleryWrapper>
         <ContentWrapper>
           <div className="wrap-container">

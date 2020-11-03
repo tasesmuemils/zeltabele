@@ -6,16 +6,10 @@ import { Branch } from "../components/Branch";
 import { MainNav } from "../components/Paths";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styled from "styled-components";
-import { SVGWrapperTop } from "../components/SVGWrapperTop";
-import { SVGWrapperBottom } from "../components/SVGWrapperBottom";
+import { ContentWrapper } from "../components/ContentWrapper";
 
 const MainAboutStyle = styled.div`
   margin: 0;
-  /* padding: 100px 0; */
-  background-color: var(--white);
-  background-image: var(--shapes);
-  background-attachment: fixed;
-  background-size: cover;
   .intro {
     padding: 0 50px;
     display: grid;
@@ -40,14 +34,14 @@ export default function homePage(props) {
       </Header>
 
       <MainAboutStyle>
-        <SVGWrapperTop />
-        <div className="wrap-container">
-          <div className="intro">
-            <h2>ZELTĀBELE</h2>
-            <p>{props.data.homePageInfo.nodes[0].description}</p>
+        <ContentWrapper>
+          <div className="wrap-container">
+            <div className="intro">
+              <h2>ZELTĀBELE</h2>
+              <p>{props.data.homePageInfo.nodes[0].description}</p>
+            </div>
           </div>
-        </div>
-        <SVGWrapperBottom />
+        </ContentWrapper>
       </MainAboutStyle>
     </>
   );

@@ -1,6 +1,6 @@
 export default {
-    name: "studyPlans",
-    title: "Mācību plāns",
+    name: "MieraStudyPlans",
+    title: "Miera ielas Mācību plāns",
     type: "document",
     fields: [
         {
@@ -15,6 +15,12 @@ export default {
                     { value: "Vasara", title: "Vasara" },
                 ], // <-- predefined values
             },
+        },
+        {
+            title: "Svētki",
+            name: "celebrations",
+            type: "array",
+            of: [{ type: "string" }],
         },
         {
             title: "Pirmais mēnesis",

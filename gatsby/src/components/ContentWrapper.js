@@ -4,7 +4,7 @@ import { SVGWrapperBottom } from "./SVGWrapperBottom";
 import { SVGWrapperTop } from "./SVGWrapperTop";
 
 const ContentWrapperStyle = styled.div`
-  /* background-color: var(--first); */
+  background-color: var(--white);
   background-image: var(--shapes);
   background-attachment: fixed;
   background-size: cover;
