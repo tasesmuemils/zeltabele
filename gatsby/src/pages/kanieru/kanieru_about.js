@@ -1,7 +1,5 @@
-import { graphql } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { ContentWrapper } from "../../components/ContentWrapper";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
@@ -42,25 +40,10 @@ export default function kanieru_about(props) {
       <Nav paths={KanieruNav} />
       <Header headerText={"Par Mums"} helperText={`Kaņieru ielas filiāle`} />
       <KanieruAboutStyle>
-        <ContentWrapper>
-          <div className="wrap-container">
-            <h1>HELLO!</h1>
-          </div>
-        </ContentWrapper>
+        <div className="wrap-container">
+          <h1>HELLO!</h1>
+        </div>
       </KanieruAboutStyle>
     </div>
   );
 }
-
-// export const query = graphql`
-//   query {
-//     allSanityMieraAbout {
-//       nodes {
-//         AboutDescription_1
-//         AboutDescription_2_title
-//         AboutDescription_2
-//         AboutDescription_3
-//       }
-//     }
-//   }
-// `;

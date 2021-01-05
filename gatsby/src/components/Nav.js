@@ -1,10 +1,16 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import Logo from "../assets/logo.svg";
 
 const NavStyles = styled.nav`
-  padding: 10px;
-  background: var(--fourth);
+  padding: 0px 200px;
+  color: var(--color-1);
+
+  .logo {
+    width: 50px;
+    height: auto;
+  }
 
   ul {
     display: grid;
@@ -17,16 +23,51 @@ const NavStyles = styled.nav`
   }
 
   li {
-    color: var(--white);
+    display: flex;
     font-size: 20px;
+    align-items: center;
   }
 
   .navigation {
     display: flex;
-  }
-  .navigation li {
-    padding: 0px 20px;
-    margin: 0;
+
+    li {
+      padding: 0px 20px;
+      margin: 0;
+
+      a {
+        position: relative;
+        padding: 5px;
+      }
+
+      /* Border X get width  */
+      a:before,
+      a:after {
+        position: absolute;
+        opacity: 0;
+        width: 0%;
+        height: 2px;
+        content: "";
+        background: var(--color-1);
+        transition: all 0.3s;
+      }
+
+      a:before {
+        left: 0px;
+        top: 0px;
+      }
+
+      a:after {
+        right: 0px;
+        bottom: 0px;
+      }
+
+      a:hover:before,
+      a:hover:after {
+        opacity: 1;
+        width: 100%;
+      }
+    }
   }
 `;
 
@@ -36,7 +77,9 @@ export default function Nav({ paths }) {
       <div className="wrap-container">
         <ul>
           <li>
-            <Link to="/">ZELTĀBELE</Link>
+            <Link to="/">
+              <Logo className="logo" />
+            </Link>
           </li>
           <div className="navigation">
             {paths.map((path, index) => {

@@ -22,7 +22,14 @@ export default {
             name: "GalleryImages",
             title: "Attēli Galerijai",
             type: "array",
-            of: [{ type: "image", hotspot: true }],
+            of: [
+                {
+                    type: "image",
+                    options: {
+                        hotspot: true,
+                    },
+                },
+            ],
         },
     ],
 };

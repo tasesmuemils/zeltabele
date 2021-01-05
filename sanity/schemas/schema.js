@@ -12,7 +12,8 @@ import KanieruStudyPlans from "./KanieruStudyPlans";
 import MieraAbout from "./MieraAbout";
 import MieraStudyPlans from "./MieraStudyPlans";
 import MieraGallery from "./MieraGallery";
-import MieraContacts from './MieraContacts';
+import MieraContacts from "./MieraContacts";
+import KanieruContacts from "./KanieruContacts";
 
 import month from "./month";
 
@@ -35,6 +36,7 @@ export default createSchema({
         MieraAbout,
         MieraContacts,
         KanieruStudyPlans,
+        KanieruContacts,
         month,
     ]),
 });

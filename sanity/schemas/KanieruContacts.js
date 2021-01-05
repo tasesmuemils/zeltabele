@@ -1,6 +1,6 @@
 export default {
-    name: "MieraContacts",
-    title: "Miera iela - Sazinies ar Mums",
+    name: "KanieruContacts",
+    title: "Kaņieru iela - Sazinies ar Mums",
     type: "document",
     fields: [
         {

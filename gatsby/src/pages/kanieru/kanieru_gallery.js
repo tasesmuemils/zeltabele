@@ -1,11 +1,8 @@
 import React from "react";
-// import { graphql } from "gatsby";
 import styled from "styled-components";
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
-import { ContentWrapper } from "../../components/ContentWrapper";
-// import { Gallery } from "../../components/Gallery";
 
 const GalleryWrapper = styled.div`
   .gallery-grid {
@@ -19,13 +16,11 @@ export default function gallery(props) {
   return (
     <div>
       <Nav paths={KanieruNav} />
-      <Header headerText="Galerija" />
+      <Header headerText="Galerija" helperText={`Miera ielas filiāle`} />
       <GalleryWrapper>
-        <ContentWrapper>
-          <div className="wrap-container">
-            <h1>Galerija!</h1>
-          </div>
-        </ContentWrapper>
+        <div className="wrap-container">
+          <h1>Galerija!</h1>
+        </div>
       </GalleryWrapper>
     </div>
   );

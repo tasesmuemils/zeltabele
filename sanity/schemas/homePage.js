@@ -1,16 +1,16 @@
 export default {
     name: "homePage",
-    title: "Home",
+    title: "Sākuma lapa",
     type: "document",
     fields: [
         {
             name: "intro",
-            title: "Introduction",
+            title: "Sākuma sveiciens",
             type: "string",
         },
         {
             name: "description",
-            title: "Description",
+            title: "Apraksts",
             type: "text",
         },
     ],

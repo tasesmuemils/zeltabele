@@ -1,31 +1,157 @@
 import React from "react";
 import styled from "styled-components";
+import Logo from "../assets/logo.svg";
+import FbLogo from "../assets/facebook.svg";
+import { Link, useStaticQuery, graphql } from "gatsby";
 
 const FooterStyle = styled.footer`
   text-align: center;
   color: var(--white);
-  background-color: var(--fourth);
+  background-color: var(--color-3);
+  padding: 20px;
+  margin: 50px 50px 0 50px;
+  border-top-left-radius: 70px;
+  border-top-right-radius: 20px;
   p {
-    margin: 0px;
+    font-size: 14px;
+  }
+  /* * {
+    border: red solid 1px;
+  } */
+
+  .footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    padding: 10px;
+
+    * {
+      margin: 0px;
+    }
+
+    h3 {
+      font-size: 17px;
+      /* margin: 5px auto; */
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .footer-to-page {
+      /* display: flex; */
+      /* justify-content: center; */
+      background: none;
+      overflow: hidden;
+      color: var(--white);
+      /* border: 2px solid var(--white); */
+      border-radius: 5px;
+      padding: 5px 10px;
+      /* margin: 100px 0; */
+      font-size: 21px;
+      cursor: pointer;
+      outline: none;
+      &:hover {
+        /* background-color: var(--white); */
+      }
+    }
+  }
+
+  .logo {
+    width: 70px;
+    height: auto;
+
+    rect {
+      fill: var(--color-3);
+    }
+
+    path {
+      fill: var(--white);
+    }
+  }
+
+  .fb-logo-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+
+    .fb-logo {
+      width: 25px;
+      height: auto;
+    }
   }
 `;
 
 export default function Footer() {
+  const data = useStaticQuery(graphql`
+    query FooterQuery {
+      allSanityKanieruContacts {
+        nodes {
+          address
+          work_time
+          email
+          phone
+        }
+      }
+      allSanityMieraContacts {
+        nodes {
+          address
+          work_time
+          email
+          phone
+        }
+      }
+    }
+  `);
+
+  const kanieruInfo = data.allSanityKanieruContacts.nodes;
+  const mieraInfo = data.allSanityMieraContacts.nodes;
+
+  console.log(kanieruInfo, mieraInfo);
+
   return (
     <FooterStyle>
       <div className="wrap-container">
-        {/* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 220">
-          <path
-            fill="#fff"
-            fillOpacity="1"
-            d="M0,160L120,138.7C240,117,480,75,720,64C960,53,1200,75,1320,85.3L1440,96L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"
-          ></path>
-        </svg> */}
         <div>
-          <p>ADRESE</p>
-          <p>KONTAKTI</p>
-          <p>Vēl visāds info</p>
-          <p>&copy; Zeltabele {new Date().getFullYear()}</p>
+          <div className="footer-content-wrapper">
+            <div className="footer-content">
+              <div className="kanieru-footer">
+                <h3>
+                  <Link to="/kanieru/kanieru_about">
+                    <span className="footer-to-page">Kaņieru iela</span>
+                  </Link>
+                </h3>
+                <div>
+                  <p>Adrese: {kanieruInfo[0].address}</p>
+                  <p>Darba laiks: {kanieruInfo[0].work_time}</p>
+                  <p>E-pasts: {kanieruInfo[0].email}</p>
+                  <p>Tālrunis: {kanieruInfo[0].phone}</p>
+                </div>
+              </div>
+              <div>
+                <Logo className="logo" />
+              </div>
+              <div className="miera-footer">
+                <h3>
+                  <Link to="/miera/miera_about">
+                    <span className="footer-to-page">Miera iela</span>
+                  </Link>
+                </h3>
+                <div>
+                  <p>Adrese: {mieraInfo[0].address}</p>
+                  <p>Darba laiks: {mieraInfo[0].work_time}</p>
+                  <p>E-pasts: {mieraInfo[0].email}</p>
+                  <p>Tālrunis: {mieraInfo[0].phone}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="fb-logo-wrapper">
+            <a href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/">
+              <FbLogo className="fb-logo" />
+            </a>
+          </div>
+          <p>&copy; Zeltābele {new Date().getFullYear()}</p>
         </div>
       </div>
     </FooterStyle>

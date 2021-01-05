@@ -1,25 +1,31 @@
 import React from "react";
 import styled from "styled-components";
 
-const StudyPanStyle = styled.div`
+const StudyPlanStyle = styled.div`
   display: grid;
   justify-content: center;
+  padding: 10px 0;
 
   h1,
   h2 {
     text-align: center;
+    padding-bottom: 5px;
+  }
+
+  .sp-section {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
   }
 
   .sp-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    background-color: hsl(213.2142857142857, 48.275862068965516%, 45.490196078431374%);
-    background-color: rgb(17, 150, 160);
+    background-color: var(--color-5);
     color: white;
-    margin: 5px 0 20px;
-    padding: 20px;
+    padding: 20px 0 50px;
     border-radius: 20px;
+    /* box-shadow: 0px 3px 10px 1px black; */
   }
 
   ul {
@@ -29,7 +35,7 @@ const StudyPanStyle = styled.div`
 
   li {
     list-style: none;
-
+    font-size: 20px;
     text-align: center;
     padding: 3px;
     margin: 5px 20px;
@@ -37,58 +43,64 @@ const StudyPanStyle = styled.div`
 
   .celebrations {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    transform: translateY(-40px);
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     text-align: center;
-    background-color: rgba(143, 96, 201, 1);
-    box-shadow: rgba(143, 96, 201, 0.5) 0px 4px 15px;
+    background-color: var(--color-6);
     color: white;
-    padding: 20px;
-    margin-bottom: 40px;
+    padding: 10px;
+    margin: 0 50px;
     border-radius: 20px;
+    box-shadow: 0px 2px 10px 1px #000000;
+
+    p {
+      font-size: 17px;
+      letter-spacing: 1px;
+    }
   }
 `;
 
 export function StudyPlanDesign({ plans }) {
-  console.log(plans[0].node.season);
   const StudyPlanData = plans.map(plan => {
-    console.log(plan);
     return (
       <div key={plan.node.season} className="wrap-container">
-        <StudyPanStyle>
+        <StudyPlanStyle>
           <h1>{plan.node.season}</h1>
-          <div className="sp-wrapper">
-            <div>
-              <h2>{plan.node.month_1.month}</h2>
-              <ul>
-                <li>{plan.node.month_1.plan_1}</li>
-                <li>{plan.node.month_1.plan_2}</li>
-                <li>{plan.node.month_1.plan_3}</li>
-              </ul>
+          <div className="sp-section">
+            <div className="sp-wrapper">
+              <div>
+                <h2>{plan.node.month_1.month}</h2>
+                <ul>
+                  <li>{plan.node.month_1.plan_1}</li>
+                  <li>{plan.node.month_1.plan_2}</li>
+                  <li>{plan.node.month_1.plan_3}</li>
+                </ul>
+              </div>
+              <div>
+                <h2>{plan.node.month_2.month}</h2>
+                <ul>
+                  <li>{plan.node.month_2.plan_1}</li>
+                  <li>{plan.node.month_2.plan_2}</li>
+                  <li>{plan.node.month_2.plan_3}</li>
+                </ul>
+              </div>
+              <div>
+                <h2>{plan.node.month_3.month}</h2>
+                <ul>
+                  <li>{plan.node.month_3.plan_1}</li>
+                  <li>{plan.node.month_3.plan_2}</li>
+                  <li>{plan.node.month_3.plan_3}</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h2>{plan.node.month_2.month}</h2>
-              <ul>
-                <li>{plan.node.month_2.plan_1}</li>
-                <li>{plan.node.month_2.plan_2}</li>
-                <li>{plan.node.month_2.plan_3}</li>
-              </ul>
-            </div>
-            <div>
-              <h2>{plan.node.month_3.month}</h2>
-              <ul>
-                <li>{plan.node.month_3.plan_1}</li>
-                <li>{plan.node.month_3.plan_2}</li>
-                <li>{plan.node.month_3.plan_3}</li>
-              </ul>
+            <div className="celebrations">
+              {plan.node.celebrations.map(item => {
+                return <p>{item}</p>;
+              })}
             </div>
           </div>
-          <div className="celebrations">
-            {plan.node.celebrations.map(item => {
-              return <p>{item}</p>;
-            })}
-          </div>
-        </StudyPanStyle>
+        </StudyPlanStyle>
       </div>
     );
   });

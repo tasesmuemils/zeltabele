@@ -5,13 +5,12 @@ import { Gallery } from "../../components/Gallery";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
-import { ContentWrapper } from "../../components/ContentWrapper";
 
 const GalleryWrapper = styled.div`
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    padding: 20px 50px;
+    /* grid-template-columns: 1fr; */
+    /* padding: 20px 50px; */
   }
 `;
 
@@ -21,15 +20,13 @@ export default function gallery(props) {
   return (
     <div>
       <Nav paths={MieraNav} />
-      <Header headerText="Galerija" />
+      <Header headerText="Galerija" helperText={`Miera ielas filiāle`} />
       <GalleryWrapper>
-        <ContentWrapper>
-          <div className="wrap-container">
-            <div className="gallery-grid">
-              <Gallery galleryData={nodes} />
-            </div>
+        <div className="wrap-container">
+          <div className="gallery-grid">
+            <Gallery galleryData={nodes} />
           </div>
-        </ContentWrapper>
+        </div>
       </GalleryWrapper>
     </div>
   );
@@ -45,7 +42,7 @@ export const query = graphql`
         GalleryDate
         GalleryImages {
           asset {
-            fluid(maxWidth: 10) {
+            fluid(maxWidth: 1200) {
               ...GatsbySanityImageFluid
             }
           }

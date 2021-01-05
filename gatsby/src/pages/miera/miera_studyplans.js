@@ -4,17 +4,14 @@ import Header from "../../components/Header";
 import { StudyPlanDesign } from "../../components/StudyPlanDesign";
 import { MieraNav } from "../../components/Paths";
 import Nav from "../../components/Nav";
-import { ContentWrapper } from "../../components/ContentWrapper";
 
 export default function mieraStudyPlan(props) {
   const { edges } = props.data.allSanityMieraStudyPlans;
   return (
     <>
       <Nav paths={MieraNav} />
-      <Header headerText={`Mācību plāns`} />
-      <ContentWrapper>
-        <StudyPlanDesign plans={edges} />
-      </ContentWrapper>
+      <Header headerText={`Mācību plāns`} helperText={`Miera ielas filiāle`} />
+      <StudyPlanDesign plans={edges} />
     </>
   );
 }

@@ -4,17 +4,17 @@ import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
 import { StudyPlanDesign } from "../../components/StudyPlanDesign";
-import { ContentWrapper } from '../../components/ContentWrapper';
 
 export default function kanieruStudyPlan(props) {
-    const { edges } = props.data.allSanityKanieruStudyPlans;
+  const { edges } = props.data.allSanityKanieruStudyPlans;
   return (
     <>
       <Nav paths={KanieruNav} />
-      <Header headerText={`Mācību plāns`} />
-      <ContentWrapper>
-        <StudyPlanDesign plans={edges} />
-      </ContentWrapper>
+      <Header
+        headerText={`Mācību plāns`}
+        helperText={`Kaņieru ielas filiāle`}
+      />
+      <StudyPlanDesign plans={edges} />
     </>
   );
 }
