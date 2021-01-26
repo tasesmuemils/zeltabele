@@ -4,21 +4,16 @@ import styled from "styled-components";
 import { Modal, Carousel } from "react-bootstrap";
 
 const GalleryStyle = styled.div`
-  /* {
-    border: 1px solid red;
-  } */
   display: grid;
   grid-template-columns: 300px auto;
   grid-template-rows: min-content;
   border-radius: 20px;
   margin: 50px 0px;
-  background-color: var(--fourth);
-  /* box-shadow: 0 19px 16px -7px rgba(0, 0, 0, 0.29); */
-  background-color: var(--color-4);
-  color: var(--white);
+  /* background-color: var(--color-4); */
+  /* color: var(--white); */
 
   &:nth-child(2n) {
-    background-color: var(--color-5);
+    /* background-color: var(--color-5); */
   }
 
   .thumb-wrapper {
@@ -51,12 +46,7 @@ const GalleryStyle = styled.div`
     background-color: rgba(20, 15, 7, 0.6);
     opacity: 0;
     transition: all 0.5s;
-    /* transform: translateY(30px); */
-    /* left: 0; */
-    /* top: 0; */
-
-    /* opacity: 0; */
-    /* color: black; */
+    color: white;
   }
 
   .thumb-style {
@@ -68,15 +58,21 @@ const GalleryStyle = styled.div`
 
   .card-text {
     padding: 30px;
+    margin: 30px 50px;
+    border: 10px solid var(--color-5);
+    border-radius: 50px;
+    color: var(--color-text);
   }
 
   h2 {
     margin: 0px;
     padding: 10px 0 0;
+    color: var(--color-headings);
   }
 
   .gallery-date {
     font-size: 18px;
+    color: var(--color-headings);
   }
 
   .gallery-text {
@@ -143,7 +139,11 @@ export function Gallery({ galleryData }) {
         </div>
         <div className="card-text">
           <h2>{gallery.GalleryName}</h2>
-          <p className="gallery-date">{gallery.GalleryDate}</p>
+          <p className="gallery-date">
+            {gallery.GalleryDate
+              ? gallery.GalleryDate.split("-").reverse().join(".")
+              : gallery.GalleryDate}
+          </p>
           <p className="gallery-text">{gallery.GalleryDescription}</p>
         </div>
       </GalleryStyle>

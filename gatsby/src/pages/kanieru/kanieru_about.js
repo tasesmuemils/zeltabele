@@ -34,13 +34,13 @@ const KanieruAboutStyle = styled.div`
   }
 `;
 
-export default function kanieru_about(props) {
+export default function kanieru_about() {
   return (
     <div>
       <Nav paths={KanieruNav} />
       <Header headerText={"Par Mums"} helperText={`Kaņieru ielas filiāle`} />
       <KanieruAboutStyle>
-        <div className="wrap-container">
+        <div className="wrap-container Main-content">
           <h1>HELLO!</h1>
         </div>
       </KanieruAboutStyle>

@@ -8,22 +8,13 @@ import "slick-carousel/slick/slick.css";
 import styled from "styled-components";
 
 const MainAboutStyle = styled.div`
-  /* margin: 50px 200px; */
-
   .intro {
     border-radius: 20px;
     border-bottom-right-radius: 70px;
-    background-color: var(--color-4);
-    color: var(--white);
-    padding: 50px;
     margin: 5em;
     display: grid;
     justify-content: center;
     text-align: center;
-  }
-
-  p {
-    font-size: 20px;
   }
 `;
 
@@ -39,8 +30,9 @@ export default function homePage(props) {
       <MainAboutStyle>
         <div className="wrap-container">
           <div className="intro">
-            <h2>ZELTĀBELE</h2>
+            <h2>{props.data.homePageInfo.nodes[0].intro}</h2>
             <p>{props.data.homePageInfo.nodes[0].description}</p>
+            <p>{props.data.homePageInfo.nodes[0].description_2}</p>
           </div>
         </div>
       </MainAboutStyle>
@@ -52,7 +44,9 @@ export const query = graphql`
   query {
     homePageInfo: allSanityHomePage {
       nodes {
+        intro
         description
+        description_2
       }
     }
   }

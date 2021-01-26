@@ -37,30 +37,37 @@ const BranchStyle = styled.div`
     fill: var(--white);
   }
 
-  .branch-cards {
+  .branch-buttons {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     align-items: center;
-  }
 
-  .branch-card {
-    border-radius: 10px;
-    margin: 0px 80px;
-    box-shadow: 1px 4px 7px 2px p;
-  }
+    .branch-button {
+      border-radius: 10px;
+      margin: 0px 80px;
+      box-shadow: 1px 4px 7px 2px p;
 
-  button {
-    position: relative;
-    background: none;
-    overflow: hidden;
-    border-radius: 50px;
-    color: var(--white);
-    border: 2px solid var(--white);
-    padding: 10px 25px;
-    font-size: 28px;
-    cursor: pointer;
-    transition: all 0.5s;
+      button {
+        position: relative;
+        overflow: hidden;
+        background-color: var(--color-4);
+        border-radius: 50px;
+        color: var(--white);
+        border: 2px solid var(--white);
+        padding: 10px 25px;
+        font-size: 28px;
+        cursor: pointer;
+        transition: all 0.2s;
+
+        &:hover {
+          background-color: var(--color-6);
+          border: 2px solid var(--color-6);
+          border-radius: 20px;
+          color: var(--white);
+        }
+      }
+    }
   }
 `;
 
@@ -68,12 +75,12 @@ export function Branch() {
   return (
     <BranchStyle>
       <div className="wrap-container">
-        <div className="branch-cards">
+        <div className="branch-buttons">
           <div>
-            <div className="branch-card">
+            <div className="branch-button">
               <Link to="/kanieru/kanieru_about">
                 <button>
-                  <span>Kaņieru iela</span>
+                  <span>Kaņiera iela</span>
                 </button>
               </Link>
             </div>
@@ -82,7 +89,7 @@ export function Branch() {
             <Logo className="logo" />
           </div>
           <div>
-            <div className="branch-card">
+            <div className="branch-button">
               <Link to="/miera/miera_about">
                 <button>
                   <span>Miera iela</span>

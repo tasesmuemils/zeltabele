@@ -16,13 +16,12 @@ const GalleryWrapper = styled.div`
 
 export default function gallery(props) {
   const { nodes } = props.data.allSanityMieraGallery;
-  console.log(nodes[0].GalleryImages[0].asset.fluid);
   return (
     <div>
       <Nav paths={MieraNav} />
       <Header headerText="Galerija" helperText={`Miera ielas filiāle`} />
       <GalleryWrapper>
-        <div className="wrap-container">
+        <div className="wrap-container Main-content">
           <div className="gallery-grid">
             <Gallery galleryData={nodes} />
           </div>

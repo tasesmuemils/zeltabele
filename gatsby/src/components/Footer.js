@@ -7,7 +7,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 const FooterStyle = styled.footer`
   text-align: center;
   color: var(--white);
-  background-color: var(--color-3);
+  background-color: var(--color-4);
   padding: 20px;
   margin: 50px 50px 0 50px;
   border-top-left-radius: 70px;
@@ -15,9 +15,9 @@ const FooterStyle = styled.footer`
   p {
     font-size: 14px;
   }
-  /* * {
-    border: red solid 1px;
-  } */
+  * {
+    /* border: red solid 1px; */
+  }
 
   .footer-content {
     display: grid;
@@ -36,48 +36,46 @@ const FooterStyle = styled.footer`
 
     p {
       font-size: 14px;
+      color: var(--color-text-bg);
     }
 
     .footer-to-page {
-      /* display: flex; */
-      /* justify-content: center; */
       background: none;
       overflow: hidden;
       color: var(--white);
-      /* border: 2px solid var(--white); */
       border-radius: 5px;
       padding: 5px 10px;
-      /* margin: 100px 0; */
       font-size: 21px;
       cursor: pointer;
       outline: none;
       &:hover {
-        /* background-color: var(--white); */
       }
     }
   }
-
-  .logo {
-    width: 70px;
-    height: auto;
-
-    rect {
-      fill: var(--color-3);
-    }
-
-    path {
-      fill: var(--white);
-    }
-  }
-
-  .fb-logo-wrapper {
-    display: flex;
-    justify-content: center;
-    padding: 10px 0;
-
-    .fb-logo {
-      width: 25px;
+  .logo-wrapper {
+    .logo {
+      width: 70px;
       height: auto;
+
+      rect {
+        fill: var(--color-4);
+      }
+
+      path {
+        fill: var(--white);
+      }
+    }
+
+    .fb-logo-wrapper {
+      display: flex;
+      justify-content: center;
+      padding-top: 25px;
+      padding-bottom: 5px;
+
+      .fb-logo {
+        width: 25px;
+        height: auto;
+      }
     }
   }
 `;
@@ -118,7 +116,7 @@ export default function Footer() {
               <div className="kanieru-footer">
                 <h3>
                   <Link to="/kanieru/kanieru_about">
-                    <span className="footer-to-page">Kaņieru iela</span>
+                    <span className="footer-to-page">Kaņiera iela</span>
                   </Link>
                 </h3>
                 <div>
@@ -128,8 +126,14 @@ export default function Footer() {
                   <p>Tālrunis: {kanieruInfo[0].phone}</p>
                 </div>
               </div>
-              <div>
+              <div className="logo-wrapper">
                 <Logo className="logo" />
+                <div className="fb-logo-wrapper">
+                  <a href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/">
+                    <FbLogo className="fb-logo" />
+                  </a>
+                </div>
+                <p>&copy; Zeltābele {new Date().getFullYear()}</p>
               </div>
               <div className="miera-footer">
                 <h3>
@@ -146,12 +150,6 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="fb-logo-wrapper">
-            <a href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/">
-              <FbLogo className="fb-logo" />
-            </a>
-          </div>
-          <p>&copy; Zeltābele {new Date().getFullYear()}</p>
         </div>
       </div>
     </FooterStyle>

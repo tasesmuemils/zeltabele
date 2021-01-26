@@ -6,14 +6,14 @@ const HeaderStyle = styled.header`
   display: grid;
   align-items: center;
   position: relative;
-  background: var(--color-3);
+  background: var(--color-4);
   text-align: center;
   overflow: hidden;
   padding: 4em 0;
   margin: 20px 50px 40px 50px;
   border-radius: 20px;
   border-bottom-left-radius: 70px;
-  color: var(--white);
+  color: var(--color-text-bg);
 
   h1 {
     font-family: "Varela Round", "sans-serif";
@@ -25,6 +25,19 @@ const HeaderStyle = styled.header`
 
   h2 {
     padding-bottom: 30px;
+    color: var(--color-text-bg);
+  }
+
+  .logo-wrapper {
+    .logo {
+      rect {
+        fill: var(--color-4);
+      }
+
+      path {
+        fill: var(--white);
+      }
+    }
   }
 `;
 

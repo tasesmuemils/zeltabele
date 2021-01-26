@@ -5,7 +5,6 @@ import Logo from "../assets/logo.svg";
 
 const NavStyles = styled.nav`
   padding: 0px 200px;
-  color: var(--color-1);
 
   .logo {
     width: 50px;
@@ -26,6 +25,7 @@ const NavStyles = styled.nav`
     display: flex;
     font-size: 20px;
     align-items: center;
+    color: var(--color-1);
   }
 
   .navigation {
@@ -45,11 +45,11 @@ const NavStyles = styled.nav`
       a:after {
         position: absolute;
         opacity: 0;
-        width: 0%;
+        width: 0;
         height: 2px;
         content: "";
         background: var(--color-1);
-        transition: all 0.3s;
+        transition: all 0.2s;
       }
 
       a:before {

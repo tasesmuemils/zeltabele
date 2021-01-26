@@ -6,39 +6,48 @@ const StudyPlanStyle = styled.div`
   justify-content: center;
   padding: 10px 0;
 
-  h1,
-  h2 {
+  h1 {
     text-align: center;
     padding-bottom: 5px;
+    color: #7e611e;
+    /* font-weight: bold; */
   }
 
   .sp-section {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-  }
 
-  .sp-wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    justify-content: center;
-    background-color: var(--color-5);
-    color: white;
-    padding: 20px 0 50px;
-    border-radius: 20px;
-    /* box-shadow: 0px 3px 10px 1px black; */
-  }
+    .sp-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      /* background-color: var(--color-5); */
+      /* color: white; */
+      padding: 20px 0 50px;
+      border: 10px solid var(--color-5);
+      border-radius: 20px;
+      /* box-shadow: 0px 3px 10px 1px black; */
 
-  ul {
-    padding: 0;
-    margin: 10px 20px;
-  }
+      h2 {
+        text-align: center;
+        padding-bottom: 5px;
+        color: var(--color-text);
+      }
 
-  li {
-    list-style: none;
-    font-size: 20px;
-    text-align: center;
-    padding: 3px;
-    margin: 5px 20px;
+      ul {
+        padding: 0;
+        margin: 10px 20px;
+
+        li {
+          list-style: none;
+          font-size: 20px;
+          text-align: center;
+          padding: 3px;
+          margin: 5px 20px;
+          color: var(--color-text);
+        }
+      }
+    }
   }
 
   .celebrations {
@@ -47,8 +56,7 @@ const StudyPlanStyle = styled.div`
     grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     text-align: center;
-    background-color: var(--color-6);
-    color: white;
+    background-color: var(--color-5);
     padding: 10px;
     margin: 0 50px;
     border-radius: 20px;
@@ -57,6 +65,7 @@ const StudyPlanStyle = styled.div`
     p {
       font-size: 17px;
       letter-spacing: 1px;
+      color: var(--color-text-bg);
     }
   }
 `;
