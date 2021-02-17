@@ -1,9 +1,12 @@
-import { graphql } from "gatsby";
+// Main packages
 import React from "react";
-import styled from "styled-components";
+import { graphql } from "gatsby";
+// Other components
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
+// Styling and background
+import styled from "styled-components";
 
 const MieraAboutStyle = styled.div`
   .about-mission {
@@ -13,7 +16,6 @@ const MieraAboutStyle = styled.div`
     h2 {
       text-align: center;
       font-weight: 500;
-      color: green;
     }
 
     .about-mission-text {
@@ -24,7 +26,7 @@ const MieraAboutStyle = styled.div`
     }
   }
 
-  .about-main-celebrations {
+  .about-mission-celebrations {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 50px 0 0 0;
@@ -67,7 +69,7 @@ export default function miera_about(props) {
               <p>{nodes[0].AboutDescription_2}</p>
             </div>
           </div>
-          <div className="about-main-celebrations">
+          <div className="about-mission-celebrations">
             <div>
               <h2>Ikdiena bērnudārzā</h2>
               <p className="about-main">{nodes[0].AboutDescription_1}</p>

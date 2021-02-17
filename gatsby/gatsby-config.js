@@ -8,8 +8,8 @@ require("dotenv").config({ path: ".env" });
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: `Zeltabele`,
-    description: `Kindergarten "Zeltabele"`,
+    title: `Zeltābele`,
+    description: `Privātā pirmskolas izglītības iestāde "Zeltabele"`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`varela round`],
+        fonts: [`Nunito`, `Caveat`, `Dancing Script`],
         display: "swap",
       },
     },

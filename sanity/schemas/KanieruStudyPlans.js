@@ -1,6 +1,6 @@
 export default {
     name: "KanieruStudyPlans",
-    title: "Kaņieru ielas Mācību plāns",
+    title: "Kaņiera ielas Mācību plāns",
     type: "document",
     fields: [
         {

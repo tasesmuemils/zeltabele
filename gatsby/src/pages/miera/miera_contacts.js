@@ -1,5 +1,7 @@
-import { graphql } from "gatsby";
+// Main packages
 import React from "react";
+import { graphql } from "gatsby";
+// Other components
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";

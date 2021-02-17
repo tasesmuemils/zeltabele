@@ -1,86 +1,192 @@
+// Main packages
 import React from "react";
+import { Link, useStaticQuery, graphql } from "gatsby";
+// Styling and background
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import FbLogo from "../assets/facebook.svg";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { device } from "../components/mediaQueries";
 
+// Footer styling
 const FooterStyle = styled.footer`
-  text-align: center;
-  color: var(--white);
-  background-color: var(--color-4);
-  padding: 20px;
-  margin: 50px 50px 0 50px;
-  border-top-left-radius: 70px;
-  border-top-right-radius: 20px;
-  p {
-    font-size: 14px;
-  }
-  * {
-    /* border: red solid 1px; */
-  }
+  background-color: var(--color-5);
 
-  .footer-content {
+  // Branches style
+  .footer-branches {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
-    align-items: center;
-    padding: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
 
-    * {
-      margin: 0px;
-    }
+    .footer-branch {
+      background-color: #ffffff;
+      padding: 70px 30px;
 
-    h3 {
-      font-size: 17px;
-      /* margin: 5px auto; */
+      h2 {
+        padding: 10px 0;
+        color: var(--color-1);
+        border-top: 3px solid var(--color-5);
+        transform: translateY(20px);
+        transition: 0.5s ease;
+        font-size: 30px;
+      }
+
+      button {
+        letter-spacing: 1px;
+        font-size: 16px;
+        opacity: 0;
+        transition: 0.5s ease;
+        transform: translateY(30px);
+        background-color: var(--color-6);
+        border: none;
+        color: var(--white);
+        padding: 10px 20px;
+      }
+
+      &:hover {
+        background-color: #f8f8f8;
+        h2 {
+          transform: translateY(0px);
+        }
+        button {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
     }
+  }
+
+  // Main footer style
+  .footer-basics {
+    text-align: center;
+    color: var(--white);
+    background-color: var(--color-4);
+    background-image: linear-gradient(
+      0deg,
+      var(--color-4) 0%,
+      var(--color-5) 100%
+    );
+    padding: 20px;
 
     p {
       font-size: 14px;
       color: var(--color-text-bg);
     }
 
-    .footer-to-page {
-      background: none;
-      overflow: hidden;
-      color: var(--white);
-      border-radius: 5px;
-      padding: 5px 10px;
-      font-size: 21px;
-      cursor: pointer;
-      outline: none;
-      &:hover {
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 2fr;
+      align-items: center;
+      padding: 10px;
+
+      * {
+        margin: 0px;
+      }
+
+      h3 {
+        font-size: 17px;
+      }
+
+      .footer-to-page {
+        background: none;
+        overflow: hidden;
+        color: var(--white);
+        border-radius: 5px;
+        padding: 5px 10px;
+        font-size: 21px;
+        cursor: pointer;
+        outline: none;
+        &:hover {
+        }
+      }
+
+      // Logo style
+      .logo-wrapper {
+        .logo {
+          width: 70px;
+          height: auto;
+
+          rect {
+            fill: none;
+          }
+
+          path {
+            fill: var(--white);
+          }
+        }
+
+        .fb-logo-wrapper {
+          display: flex;
+          justify-content: center;
+          padding-top: 25px;
+          padding-bottom: 5px;
+          background-color: none;
+
+          .fb-logo {
+            width: 25px;
+            height: auto;
+            background-color: none;
+          }
+        }
       }
     }
   }
-  .logo-wrapper {
-    .logo {
-      width: 70px;
-      height: auto;
 
-      rect {
-        fill: var(--color-4);
-      }
+  // Responsive styling
+  @media ${device.tablet} {
+    // Branches style
+    .footer-branches {
+      grid-template-columns: repeat(1, 1fr);
 
-      path {
-        fill: var(--white);
+      .footer-branch {
+        padding: 30px;
+
+        h2 {
+          padding: 10px 0 5px 0;
+          transform: translateY(0px);
+          transition: none;
+          font-size: 25px;
+        }
+
+        button {
+          opacity: 1;
+          transition: none;
+          transform: translateY(0px);
+        }
+
+        &:hover {
+          h2 {
+            transform: none;
+          }
+          button {
+            opacity: 1;
+            transform: none;
+          }
+        }
       }
     }
 
-    .fb-logo-wrapper {
-      display: flex;
-      justify-content: center;
-      padding-top: 25px;
-      padding-bottom: 5px;
+    // Main footer style
+    .footer-basics {
+      .footer-content {
+        display: flex;
+        flex-direction: column;
 
-      .fb-logo {
-        width: 25px;
-        height: auto;
+        .kanieru-footer,
+        .miera-footer {
+          padding: 20px 0px;
+        }
+
+        // Logo style
+        .logo-wrapper {
+          order: 3;
+        }
       }
     }
   }
 `;
 
 export default function Footer() {
+  // Using static query inside function
   const data = useStaticQuery(graphql`
     query FooterQuery {
       allSanityKanieruContacts {
@@ -109,7 +215,21 @@ export default function Footer() {
 
   return (
     <FooterStyle>
-      <div className="wrap-container">
+      <div className="footer-branches">
+        <Link to="/kanieru/kanieru_about">
+          <div className="footer-branch">
+            <h2>Kaņiera ielas filiāle</h2>
+            <button>Apskatīt</button>
+          </div>
+        </Link>
+        <Link to="/miera/miera_about">
+          <div className="footer-branch">
+            <h2>Miera ielas filiāle</h2>
+            <button>Apskatīt</button>
+          </div>
+        </Link>
+      </div>
+      <div className="wrap-container footer-basics">
         <div>
           <div className="footer-content-wrapper">
             <div className="footer-content">

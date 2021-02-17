@@ -1,4 +1,7 @@
 import React from "react";
+
+// require('dotenv').config();
+
 import {
   GoogleMap,
   withScriptjs,
@@ -34,7 +37,7 @@ export function MapComponent(props) {
       fullscreenControl={false}
       coordinate={props.latlng}
       isMarkerShown
-      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDUW7I6z0oxSqg68QdZfZLSC4DsAOfwotQ`}
+      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.GATSBY_GOOGLE_MAP_KEY}`}
       loadingElement={<div style={{ height: `100%`, borderRadius: `20px` }} />}
       containerElement={
         <div

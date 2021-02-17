@@ -1,16 +1,17 @@
+// Main packages
 import React from "react";
-import styled from "styled-components";
 import { graphql } from "gatsby";
+// Other components
 import { Gallery } from "../../components/Gallery";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
+// Styling and background
+import styled from "styled-components";
 
 const GalleryWrapper = styled.div`
   .gallery-grid {
     display: grid;
-    /* grid-template-columns: 1fr; */
-    /* padding: 20px 50px; */
   }
 `;
 

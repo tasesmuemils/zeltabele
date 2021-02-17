@@ -1,5 +1,8 @@
+// Main packages
 import React from "react";
+// Other components
 import Footer from "./Footer";
+// Styling and background
 import "normalize.css";
 import GlobalStyles from "../styles/GlobalStyle";
 import Typography from "../styles/Typography";

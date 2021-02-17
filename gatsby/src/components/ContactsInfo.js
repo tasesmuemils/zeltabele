@@ -1,6 +1,9 @@
+// Main packages
 import React from "react";
-import styled from "styled-components";
+// Other components
 import { MapComponent } from "../components/Map";
+// Styling and background
+import styled from "styled-components";
 
 const ContactInfoStyle = styled.div`
   display: grid;

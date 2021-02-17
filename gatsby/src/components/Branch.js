@@ -1,41 +1,17 @@
-import { Link } from "gatsby";
+// Main packages
 import React from "react";
-import styled from "styled-components";
+import { Link } from "gatsby";
+// Other components
 import Logo from "../assets/logo.svg";
+import { device } from "./mediaQueries";
+// Styling and background
+import styled from "styled-components";
 
 const BranchStyle = styled.div`
   background-color: none;
   display: flex;
   justify-content: center;
   text-align: center;
-  /* padding: 0px 50px 0px; */
-  /* * {
-    border: 1px solid red;
-  } */
-
-  h2 {
-    font-size: 50px;
-    padding: 20px;
-    margin: 0;
-  }
-
-  .logo-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-
-  .logo {
-    max-width: 200px;
-    height: auto;
-  }
-
-  .logo rect {
-    fill: var(--color-3);
-  }
-
-  .logo path {
-    fill: var(--white);
-  }
 
   .branch-buttons {
     display: grid;
@@ -45,26 +21,103 @@ const BranchStyle = styled.div`
 
     .branch-button {
       border-radius: 10px;
-      margin: 0px 80px;
-      box-shadow: 1px 4px 7px 2px p;
+      margin: 0px 60px;
 
       button {
         position: relative;
-        overflow: hidden;
-        background-color: var(--color-4);
-        border-radius: 50px;
+        background-color: transparent;
+        /* border-radius: 50px; */
         color: var(--white);
         border: 2px solid var(--white);
         padding: 10px 25px;
         font-size: 28px;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.3s;
 
         &:hover {
-          background-color: var(--color-6);
-          border: 2px solid var(--color-6);
-          border-radius: 20px;
-          color: var(--white);
+          background-color: #ffffff;
+          border: 2px solid var(--white);
+          color: var(--color-1);
+        }
+      }
+    }
+
+    .logo-wrapper {
+      display: flex;
+      justify-content: center;
+
+      .logo {
+        max-width: 100%;
+        height: auto;
+      }
+
+      .logo rect {
+        fill: none;
+      }
+
+      .logo path {
+        fill: var(--white);
+      }
+    }
+  }
+
+  // Responsive styling
+  @media ${device.laptop} {
+    .branch-buttons {
+      .branch-button {
+        margin: 0px 40px;
+        button {
+          padding: 10px 15px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  @media ${device.tablet} {
+    .branch-buttons {
+      grid-template-columns: repeat(2, 1fr);
+      .branch-button {
+        margin: 0px;
+        padding: 20px;
+
+        button {
+          /* border-radius: 50px; */
+
+          padding: 5px 15px;
+          font-size: 20px;
+          cursor: pointer;
+          transition: all 0.3s;
+        }
+      }
+
+      .logo-wrapper {
+        display: none;
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    .branch-buttons {
+      grid-template-columns: repeat(2, 1fr);
+      .branch-button {
+        padding: 10px 5px;
+
+        button {
+          padding: 5px 15px;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileS} {
+    .branch-buttons {
+      .branch-button {
+        padding: 10px 5px;
+
+        button {
+          font-size: 15px;
         }
       }
     }
@@ -76,7 +129,7 @@ export function Branch() {
     <BranchStyle>
       <div className="wrap-container">
         <div className="branch-buttons">
-          <div>
+          <div className="branch-buttons-order">
             <div className="branch-button">
               <Link to="/kanieru/kanieru_about">
                 <button>
@@ -85,10 +138,10 @@ export function Branch() {
               </Link>
             </div>
           </div>
-          <div className="logo-wrapper">
+          <div className="logo-wrapper branch-buttons-order">
             <Logo className="logo" />
           </div>
-          <div>
+          <div className="branch-buttons-order">
             <div className="branch-button">
               <Link to="/miera/miera_about">
                 <button>

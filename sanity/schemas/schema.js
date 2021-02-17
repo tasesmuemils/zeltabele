@@ -8,11 +8,14 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import blockContent from "./blockContent";
 import homePage from "./homePage";
 
+import KanieruGallery from "./KanieruGallery";
 import KanieruStudyPlans from "./KanieruStudyPlans";
 import MieraAbout from "./MieraAbout";
 import MieraStudyPlans from "./MieraStudyPlans";
 import MieraGallery from "./MieraGallery";
 import MieraContacts from "./MieraContacts";
+import KanieruTeam from "./KanieruTeam";
+import MieraTeam from "./MieraTeam";
 import KanieruContacts from "./KanieruContacts";
 
 import month from "./month";
@@ -31,11 +34,14 @@ export default createSchema({
         // { type: 'typename' } in other document schemas
         blockContent,
         homePage,
+        MieraAbout,
         MieraStudyPlans,
         MieraGallery,
-        MieraAbout,
+        MieraTeam,
         MieraContacts,
         KanieruStudyPlans,
+        KanieruGallery,
+        KanieruTeam,
         KanieruContacts,
         month,
     ]),

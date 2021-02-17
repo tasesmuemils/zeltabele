@@ -10,7 +10,6 @@ const StudyPlanStyle = styled.div`
     text-align: center;
     padding-bottom: 5px;
     color: #7e611e;
-    /* font-weight: bold; */
   }
 
   .sp-section {
@@ -104,8 +103,8 @@ export function StudyPlanDesign({ plans }) {
               </div>
             </div>
             <div className="celebrations">
-              {plan.node.celebrations.map(item => {
-                return <p>{item}</p>;
+              {plan.node.celebrations.map((item, index) => {
+                return <p key={index}>{item}</p>;
               })}
             </div>
           </div>

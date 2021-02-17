@@ -1,15 +1,18 @@
 import { createGlobalStyle } from "styled-components";
 
 const Typography = createGlobalStyle`
-    * {
-        font-family: 'Varela Round', 'sans-serif';
-        /* letter-spacing: 2px; */
-        font-weight: 500;
+    body {
+        font-family: Nunito, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
     }
 
-    p {
-        margin: 0xp;
-        font-size: 20px;
+    p, li, span {
+        letter-spacing: .03em;
+        line-height: 1.6em;
+    }
+
+    h1,h2,h3,h4,h5,h6 {
+        font-weight: normal;
+        margin: 0;
     }
 
 `;

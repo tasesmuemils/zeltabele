@@ -86,11 +86,11 @@ const GalleryStyle = styled.div`
 
 const StyledModal = styled(Modal)`
   .custom-modal-dialog {
-    min-width: 700px;
+    max-width: 700px;
   }
 
   .carousel-image-height {
-    max-height: 600px;
+    /* max-height: 600px; */
   }
 `;
 
