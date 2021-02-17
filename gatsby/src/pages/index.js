@@ -1,5 +1,5 @@
 // Main packages
-import React from "react";
+import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image/withIEPolyfill";
 // Other components
@@ -497,7 +497,28 @@ const StyledBackgroundSectionFixed = styled(BackgroundImage)`
 `;
 
 export default function homePage(props) {
-  Aos.init({ duration: 1000, once: true, offset: 70 });
+  let AOS;
+
+  useEffect(() => {
+    /**
+     * Server-side rendering does not provide the 'document' object
+     * therefore this import is required either in useEffect or componentDidMount as they
+     * are exclusively executed on a client
+     */
+    const AOS = require("aos");
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 70,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (AOS) {
+      AOS.refresh();
+    }
+  });
+  // Aos.init({ duration: 1000, once: true, offset: 70 });
 
   return (
     <>
