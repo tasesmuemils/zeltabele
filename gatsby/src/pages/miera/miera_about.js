@@ -56,7 +56,8 @@ const MieraAboutStyle = styled.div`
 export default function miera_about(props) {
   const { nodes } = props.data.allSanityMieraAbout;
 
-  const partyArray = nodes[0].AboutDescription_3.split(",");
+  // const partyArray = nodes[0].AboutDescription_3.split(",");
+  console.log(nodes[0].AboutDescription_3_party);
   return (
     <div>
       <Nav paths={MieraNav} />
@@ -64,20 +65,20 @@ export default function miera_about(props) {
       <MieraAboutStyle>
         <div className="wrap-container Main-content">
           <div className="about-mission">
-            <h2>{nodes[0].AboutDescription_2_title}</h2>
+            <h2>{nodes[0].AboutDescription_1_title}</h2>
             <div className="about-mission-text">
-              <p>{nodes[0].AboutDescription_2}</p>
+              <p>{nodes[0].AboutDescription_1}</p>
             </div>
           </div>
           <div className="about-mission-celebrations">
             <div>
-              <h2>Ikdiena bērnudārzā</h2>
-              <p className="about-main">{nodes[0].AboutDescription_1}</p>
+              <h2>{nodes[0].AboutDescription_2_title}</h2>
+              <p className="about-main">{nodes[0].AboutDescription_2}</p>
             </div>
             <div>
-              <h2>Svētku dienas</h2>
+              <h2>{nodes[0].AboutDescription_3_title}</h2>
               <ul>
-                {partyArray.map(party => {
+                {nodes[0].AboutDescription_3_party.map(party => {
                   return <li key={party}>{party}</li>;
                 })}
               </ul>
@@ -94,9 +95,11 @@ export const query = graphql`
     allSanityMieraAbout {
       nodes {
         AboutDescription_1
-        AboutDescription_2_title
+        AboutDescription_1_title
         AboutDescription_2
-        AboutDescription_3
+        AboutDescription_2_title
+        AboutDescription_3_party
+        AboutDescription_3_title
       }
     }
   }
