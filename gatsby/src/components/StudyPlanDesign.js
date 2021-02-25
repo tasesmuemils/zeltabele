@@ -1,15 +1,24 @@
+//Main packages
 import React from "react";
+// Other components
+import { device } from "../components/mediaQueries";
+// Styling and background
 import styled from "styled-components";
 
 const StudyPlanStyle = styled.div`
+  /* * {
+    border: 1px solid red;
+  } */
+
   display: grid;
   justify-content: center;
-  padding: 10px 0;
+  padding: 30px 0;
 
   h1 {
     text-align: center;
     padding-bottom: 5px;
     color: #7e611e;
+    padding-bottom: 20px;
   }
 
   .sp-section {
@@ -20,12 +29,12 @@ const StudyPlanStyle = styled.div`
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       justify-content: center;
-      /* background-color: var(--color-5); */
-      /* color: white; */
+
       padding: 20px 0 50px;
       border: 10px solid var(--color-5);
       border-radius: 20px;
-      /* box-shadow: 0px 3px 10px 1px black; */
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
       h2 {
         text-align: center;
@@ -47,24 +56,101 @@ const StudyPlanStyle = styled.div`
         }
       }
     }
+
+    .celebrations {
+      color: var(--white);
+      display: grid;
+      transform: translateY(-40px);
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      text-align: center;
+      background-image: linear-gradient(
+        135deg,
+        var(--color-5) 30%,
+        var(--color-6) 100%
+      );
+      padding: 30px;
+      margin: 0 50px;
+      border-radius: 20px;
+
+      p {
+        font-size: 17px;
+        letter-spacing: 1px;
+        color: var(--white);
+      }
+    }
   }
 
-  .celebrations {
-    display: grid;
-    transform: translateY(-40px);
-    grid-template-columns: repeat(2, 1fr);
-    justify-content: center;
-    text-align: center;
-    background-color: var(--color-5);
-    padding: 10px;
-    margin: 0 50px;
-    border-radius: 20px;
-    box-shadow: 0px 2px 10px 1px #000000;
+  // Responsive style
+  @media ${device.laptop} {
+    .sp-section {
+      .sp-wrapper {
+        padding: 20px 0 40px;
+        ul {
+          margin: 10px 0px;
 
-    p {
-      font-size: 17px;
-      letter-spacing: 1px;
-      color: var(--color-text-bg);
+          li {
+            margin: 5px 10px;
+          }
+        }
+      }
+
+      .celebrations {
+        padding: 30px 10px;
+        margin: 0 20px;
+      }
+    }
+  }
+
+  @media ${device.tablet} {
+    .sp-section {
+      .sp-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: auto;
+
+        /* div:nth-child(3) {
+          grid-column: 1 / end;
+          justify-self: center;
+        } */
+      }
+
+      .celebrations {
+        padding: 20px 10px;
+        margin: 0 10px;
+
+        p {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  @media ${device.mobileL} {
+    padding: 10px 0;
+    .sp-section {
+      .sp-wrapper {
+        grid-template-columns: repeat(1, 1fr);
+
+        div {
+          padding: 0px 20px 20px 20px;
+        }
+
+        /* div:nth-child(3) {
+          grid-column: 2/3;
+          justify-self: center;
+        } */
+      }
+
+      .celebrations {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 20px 10px;
+        margin: 0 10px;
+
+        p {
+          font-size: 15px;
+        }
+      }
     }
   }
 `;
@@ -72,7 +158,7 @@ const StudyPlanStyle = styled.div`
 export function StudyPlanDesign({ plans }) {
   const StudyPlanData = plans.map(plan => {
     return (
-      <div key={plan.node.season} className="wrap-container">
+      <div key={plan.node.season} className="wrap-container Main-content">
         <StudyPlanStyle>
           <h1>{plan.node.season}</h1>
           <div className="sp-section">

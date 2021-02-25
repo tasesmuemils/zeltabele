@@ -1,7 +1,5 @@
+// Main packages
 import React from "react";
-
-// require('dotenv').config();
-
 import {
   GoogleMap,
   withScriptjs,
@@ -43,7 +41,6 @@ export function MapComponent(props) {
         <div
           style={{
             height: `100%`,
-            // border: `20px solid red`,
             borderRadius: `20px`,
           }}
         />

@@ -12,7 +12,10 @@ export default function contacts({ data }) {
   return (
     <div>
       <Nav paths={KanieruNav} />
-      <Header headerText="Saznies ar Mums"></Header>
+      <Header
+        headerText="Saznies ar Mums"
+        helperText={`Kaņiera ielas filiāle`}
+      ></Header>
       <div>
         <div className="wrap-container Main-content">
           <TeamMembers teamMembers={TeamNodes} />

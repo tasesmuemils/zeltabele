@@ -5,10 +5,13 @@ import { graphql } from "gatsby";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
+import { device } from "../../components/mediaQueries";
 // Styling and background
 import styled from "styled-components";
 
 const MieraAboutStyle = styled.div`
+  padding: 100px 0;
+
   .about-mission {
     display: grid;
     justify-content: center;
@@ -23,31 +26,76 @@ const MieraAboutStyle = styled.div`
       justify-content: center;
       padding: 10px 0 50px 0;
       text-align: center;
+      color: var(--color-text);
     }
   }
 
-  .about-mission-celebrations {
+  .about-main-celebrations {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 50px 0 0 0;
-
-    .about-main {
-      border-radius: 20px;
-    }
+    padding-top: 50px;
 
     h2 {
       padding-bottom: 20px;
     }
 
-    ul {
-      padding: 0px 20px 20px 20px;
-      border-radius: 20px;
-      text-align: left;
-      font-size: 20px;
-      margin-left: 30px;
+    .about-main {
+      color: var(--color-text);
+    }
 
-      li {
-        color: var(--color-text);
+    .about-celebrations {
+      padding-left: 50px;
+      ul {
+        padding: 0px 20px 20px 20px;
+        text-align: left;
+        margin-left: 30px;
+
+        li {
+          color: var(--color-text);
+          font-size: 16px;
+
+          &::marker {
+            color: var(--color-headings);
+          }
+        }
+      }
+    }
+  }
+
+  //Responsive design
+  @media ${device.laptop} {
+    padding: 50px 0;
+
+    .about-main-celebrations {
+      padding-top: 20px;
+      .about-celebrations {
+        padding-left: 20px;
+        ul {
+          padding: 0px;
+        }
+      }
+    }
+  }
+
+  @media ${device.tablet} {
+    .about-main-celebrations {
+      grid-template-columns: repeat(1, 1fr);
+      padding-top: 0px;
+
+      h2 {
+        padding-bottom: 10px;
+      }
+
+      .about-main {
+      }
+
+      .about-celebrations {
+        padding-left: 0px;
+        padding-top: 20px;
+        ul {
+          padding: 0px;
+          margin-left: 20px;
+        }
       }
     }
   }
@@ -70,12 +118,12 @@ export default function miera_about(props) {
               <p>{nodes[0].AboutDescription_1}</p>
             </div>
           </div>
-          <div className="about-mission-celebrations">
+          <div className="about-main-celebrations">
             <div>
               <h2>{nodes[0].AboutDescription_2_title}</h2>
               <p className="about-main">{nodes[0].AboutDescription_2}</p>
             </div>
-            <div>
+            <div className="about-celebrations">
               <h2>{nodes[0].AboutDescription_3_title}</h2>
               <ul>
                 {nodes[0].AboutDescription_3_party.map(party => {

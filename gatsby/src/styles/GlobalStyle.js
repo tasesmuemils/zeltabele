@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-
+import { device } from "../components/mediaQueries";
 const GlobalStyles = createGlobalStyle`
     :root {
         --white: #ffffff;
@@ -10,7 +10,7 @@ const GlobalStyles = createGlobalStyle`
         --color-3: rgba(138, 156, 56, 1);
         --color-4: #719c38;
         --color-5: #589c38;
-        --color-6: #3f9c38;
+        --color-6: rgb(63, 156, 56);
         --color-headings: rgba(126, 97, 30, 1);
         --color-text: #60605B;
         --color-grey-background: #f8f8f8;      
@@ -42,6 +42,22 @@ const GlobalStyles = createGlobalStyle`
     .Main-content {
         box-sizing: border-box;
         padding: 0px 120px;
+
+        @media ${device.laptopL} {
+            padding: 0 70px;
+        }
+
+        @media ${device.laptop} {
+            padding: 0 50px;
+        }
+
+        @media ${device.tablet} {
+            padding: 0 30px;
+        }
+
+        @media ${device.mobileL} {
+            padding: 0 20px;
+        }
     }
 
     li {

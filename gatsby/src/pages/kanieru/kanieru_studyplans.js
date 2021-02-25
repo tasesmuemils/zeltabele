@@ -12,7 +12,7 @@ export default function kanieruStudyPlan(props) {
       <Nav paths={KanieruNav} />
       <Header
         headerText={`Mācību plāns`}
-        helperText={`Kaņieru ielas filiāle`}
+        helperText={`Kaņiera ielas filiāle`}
       />
       <StudyPlanDesign plans={edges} />
     </>

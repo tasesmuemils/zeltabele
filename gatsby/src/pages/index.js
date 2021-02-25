@@ -79,7 +79,7 @@ const MainAboutStyle = styled.div`
         align-items: flex-start;
 
         .quote-wrapper {
-          width: 30%;
+          width: 45%;
           transform: translateY(40px);
           z-index: 1;
 
@@ -91,7 +91,7 @@ const MainAboutStyle = styled.div`
 
         p {
           position: relative;
-          width: 30%;
+          width: 45%;
           background-color: var(--color-1);
           padding: 50px;
           color: var(--white);
@@ -148,7 +148,7 @@ const MainAboutStyle = styled.div`
         align-items: flex-end;
 
         .quote-wrapper {
-          width: 30%;
+          width: 45%;
           transform: translateY(40px);
           z-index: 1;
 
@@ -158,7 +158,7 @@ const MainAboutStyle = styled.div`
           }
         }
         p {
-          width: 30%;
+          width: 45%;
           background-color: var(--color-1);
           padding: 50px;
           color: var(--white);
@@ -169,6 +169,7 @@ const MainAboutStyle = styled.div`
   }
 
   // Responsive styling
+
   @media ${device.laptopL} {
     .home-page {
       .welcome-text {
@@ -402,6 +403,13 @@ const MainAboutStyle = styled.div`
         }
       }
 
+      .hp-sections {
+        .handwrite-text {
+          letter-spacing: 1px;
+          font-size: 30px;
+        }
+      }
+
       .hp-section-2 {
         grid-template-columns: repeat(1, 1fr);
         grid-template-rows: 300px auto;
@@ -443,6 +451,9 @@ const MainAboutStyle = styled.div`
         .hp-section-5-text {
           text-align: left;
           padding: 30px 10px;
+          p {
+            font-size: 18px;
+          }
         }
 
         .hp-section-5-image {
@@ -470,9 +481,6 @@ const MainAboutStyle = styled.div`
       }
     }
   }
-
-  @media ${device.mobileM} {
-  }
 `;
 
 // Background styling
@@ -494,6 +502,11 @@ const StyledBackgroundSectionFixed = styled(BackgroundImage)`
   height: 100%;
   background-size: cover;
   background-attachment: fixed;
+
+  @media ${device.tablet} {
+    /* background-attachment: fixed; */
+    background-attachment: initial;
+  }
 `;
 
 export default function homePage(props) {

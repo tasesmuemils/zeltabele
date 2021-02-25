@@ -17,7 +17,7 @@ export default function gallery(props) {
   return (
     <div>
       <Nav paths={KanieruNav} />
-      <Header headerText="Galerija" helperText={`Miera ielas filiāle`} />
+      <Header headerText="Galerija" helperText={`Kaņiera ielas filiāle`} />
       <GalleryWrapper>
         <div className="wrap-container Main-content">
           <div className="gallery-grid">

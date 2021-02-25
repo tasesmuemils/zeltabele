@@ -38,7 +38,7 @@ export default function kanieru_about() {
   return (
     <div>
       <Nav paths={KanieruNav} />
-      <Header headerText={"Par Mums"} helperText={`Kaņieru ielas filiāle`} />
+      <Header headerText={"Par Mums"} helperText={`Kaņiera ielas filiāle`} />
       <KanieruAboutStyle>
         <div className="wrap-container Main-content">
           <h1>HELLO!</h1>

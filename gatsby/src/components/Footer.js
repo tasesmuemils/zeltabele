@@ -151,6 +151,7 @@ const FooterStyle = styled.footer`
           opacity: 1;
           transition: none;
           transform: translateY(0px);
+          transition: 0.3s ease-in-out;
         }
 
         &:hover {
@@ -160,6 +161,7 @@ const FooterStyle = styled.footer`
           button {
             opacity: 1;
             transform: none;
+            background-color: #2f752a;
           }
         }
       }
