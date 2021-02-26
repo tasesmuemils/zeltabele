@@ -18,6 +18,16 @@ export default function contacts({ data }) {
       <Header headerText="Saznies ar Mums" helperText={`Miera ielas filiāle`} />
       <div>
         <div className="wrap-container Main-content">
+          <h1
+            className="team-title"
+            style={{
+              textAlign: "center",
+              color: "var(--color-headings)",
+              padding: "30px 0px",
+            }}
+          >
+            Komanda
+          </h1>
           <TeamMembers teamMembers={TeamNodes} />
         </div>
       </div>
@@ -35,7 +45,7 @@ export default function contacts({ data }) {
 
 export const query = graphql`
   query {
-    allSanityMieraTeam {
+    allSanityMieraTeam(sort: { fields: TeamMemberPosition, order: DESC }) {
       nodes {
         TeamMemberName
         TeamMemberPosition

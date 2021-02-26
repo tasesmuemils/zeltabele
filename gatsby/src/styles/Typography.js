@@ -2,7 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const Typography = createGlobalStyle`
     body {
-        font-family: Nunito, sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
+        font-family: Nunito, sans-serif;
+        /* -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue'; */
     }
 
     p, li, span {
@@ -11,6 +12,7 @@ const Typography = createGlobalStyle`
     }
 
     h1,h2,h3,h4,h5,h6 {
+        font-family: Nunito, sans-serif;
         font-weight: normal;
         margin: 0;
     }

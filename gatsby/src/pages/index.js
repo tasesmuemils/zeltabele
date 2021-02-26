@@ -504,7 +504,6 @@ const StyledBackgroundSectionFixed = styled(BackgroundImage)`
   background-attachment: fixed;
 
   @media ${device.tablet} {
-    /* background-attachment: fixed; */
     background-attachment: initial;
   }
 `;

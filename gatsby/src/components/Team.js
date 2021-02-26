@@ -13,7 +13,7 @@ const TeamMembersStyle = styled.div`
 
   display: grid;
   justify-content: center;
-  padding: 50px 0;
+  padding: 20px 0 30px;
   text-align: center;
 
   .title {
@@ -50,6 +50,10 @@ const TeamMembersStyle = styled.div`
         font-size: 16px;
         letter-spacing: 0.03em;
         line-height: 1.6em;
+
+        &::marker {
+          color: var(--color-headings);
+        }
       }
     }
 
@@ -128,7 +132,6 @@ export function TeamMembers(props) {
 
   return (
     <TeamMembersStyle>
-      <h1 className="title">Komanda</h1>
       <div className="member-wrapper Main-content">{TeamMembersList}</div>
     </TeamMembersStyle>
   );

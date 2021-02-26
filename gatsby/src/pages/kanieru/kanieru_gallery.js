@@ -31,7 +31,7 @@ export default function gallery(props) {
 
 export const query = graphql`
   query {
-    allSanityKanieruGallery {
+    allSanityKanieruGallery(sort: { fields: GalleryDate, order: DESC }) {
       nodes {
         id
         GalleryName

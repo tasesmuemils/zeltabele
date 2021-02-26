@@ -34,7 +34,7 @@ export default function gallery(props) {
 
 export const query = graphql`
   query MyQuery {
-    allSanityMieraGallery {
+    allSanityMieraGallery(sort: { fields: GalleryDate, order: DESC }) {
       nodes {
         id
         GalleryName

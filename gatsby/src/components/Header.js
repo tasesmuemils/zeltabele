@@ -97,8 +97,8 @@ const HeaderStyle = styled.header`
     .header-wrapper {
       .header-text {
         h1 {
-          font-size: 25px;
-          padding: 15px 0px 0px 0px;
+          /* font-size: 25px; */
+          padding: 15px 0px 5px 0px;
         }
 
         h2 {

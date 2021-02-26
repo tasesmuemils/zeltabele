@@ -1,5 +1,7 @@
+// Main packages
 import React from "react";
 import { graphql } from "gatsby";
+// Other components
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
@@ -18,6 +20,16 @@ export default function contacts({ data }) {
       ></Header>
       <div>
         <div className="wrap-container Main-content">
+          <h1
+            className="team-title"
+            style={{
+              textAlign: "center",
+              color: "var(--color-headings)",
+              padding: "30px 0px",
+            }}
+          >
+            Komanda
+          </h1>
           <TeamMembers teamMembers={TeamNodes} />
         </div>
       </div>
@@ -35,7 +47,7 @@ export default function contacts({ data }) {
 
 export const query = graphql`
   query {
-    allSanityKanieruTeam {
+    allSanityKanieruTeam(sort: { fields: TeamMemberPosition, order: DESC }) {
       nodes {
         TeamMemberName
         TeamMemberPosition

@@ -15,11 +15,29 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    // {
+    //   resolve: `gatsby-plugin-google-fonts`,
+    //   options: {
+    //     fonts: [`Nunito`, `Dancing Script`],
+    //     display: "swap",
+    //   },
+    // },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [`Nunito`, `Caveat`, `Dancing Script`],
-        display: "swap",
+        fonts: {
+          google: [
+            {
+              family: "Nunito",
+              variants: ["400", "700", "900"],
+            },
+            {
+              family: "Dancing Script",
+              variants: ["400", "700"],
+              subsets: ["latin", "latin-ext"],
+            },
+          ],
+        },
       },
     },
     {
