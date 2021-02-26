@@ -30,6 +30,7 @@ module.exports = {
             {
               family: "Nunito",
               variants: ["400", "700", "900"],
+              subsets: ["latin", "latin-ext"],
             },
             {
               family: "Dancing Script",
