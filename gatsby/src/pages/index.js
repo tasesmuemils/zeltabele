@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image/withIEPolyfill";
 // Other components
+import SEO from "../components/SEO";
 import Nav from "../components/Nav";
 import Header from "../components/Header";
 import { MainNav } from "../components/Paths";
@@ -534,6 +535,7 @@ export default function homePage(props) {
 
   return (
     <>
+      <SEO title="Sākums" />
       <HeroStyle>
         <Nav paths={MainNav} />
         <Header

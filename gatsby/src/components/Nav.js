@@ -179,15 +179,17 @@ Note: Beware of modifying this element as it can break the animations - you shou
           /* Wrapper for item list */
           .bm-item-list {
             color: #ffffff;
-            padding: 0.8em;
+            padding: 0.8em 1em;
           }
 
           /* Individual item */
           .bm-item {
             color: #ffffff;
+            border: 2px solid white;
+            margin: 15px 0;
             display: inline-block;
             outline: none;
-            padding: 10px;
+            padding: 10px 0;
             font-size: 20px;
           }
         }

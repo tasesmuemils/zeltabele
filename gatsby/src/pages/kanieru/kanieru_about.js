@@ -1,8 +1,12 @@
+// Main packages
 import React from "react";
-import styled from "styled-components";
+// Other components
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
+// Styling and backgrounds
+import styled from "styled-components";
 
 const KanieruAboutStyle = styled.div`
   .about-main,
@@ -37,6 +41,7 @@ const KanieruAboutStyle = styled.div`
 export default function kanieru_about() {
   return (
     <div>
+      <SEO title="Par Mums (Kaņiera iela)" />
       <Nav paths={KanieruNav} />
       <Header headerText={"Par Mums"} helperText={`Kaņiera ielas filiāle`} />
       <KanieruAboutStyle>

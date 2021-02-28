@@ -2,6 +2,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Other components
+import SEO from "../../components/SEO";
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
@@ -13,6 +14,7 @@ export default function contacts({ data }) {
   const TeamNodes = data.allSanityKanieruTeam.nodes;
   return (
     <div>
+      <SEO title="Sazinies ar Mums (Kaņiera iela)" />
       <Nav paths={KanieruNav} />
       <Header
         headerText="Saznies ar Mums"

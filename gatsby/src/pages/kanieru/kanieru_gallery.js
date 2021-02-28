@@ -1,10 +1,14 @@
+// Main packages
 import React from "react";
-import styled from "styled-components";
-import Nav from "../../components/Nav";
 import { graphql } from "gatsby";
+// Other components
+import SEO from "../../components/SEO";
+import Nav from "../../components/Nav";
 import { Gallery } from "../../components/Gallery";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
+// Styling and backgrounds
+import styled from "styled-components";
 
 const GalleryWrapper = styled.div`
   .gallery-grid {
@@ -16,6 +20,7 @@ export default function gallery(props) {
   const { nodes } = props.data.allSanityKanieruGallery;
   return (
     <div>
+      <SEO title="Galerija (Kaņiera iela)" />
       <Nav paths={KanieruNav} />
       <Header headerText="Galerija" helperText={`Kaņiera ielas filiāle`} />
       <GalleryWrapper>

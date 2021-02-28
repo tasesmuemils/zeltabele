@@ -1,5 +1,8 @@
-import { graphql } from "gatsby";
+// Main packages
 import React from "react";
+import { graphql } from "gatsby";
+// Other components
+import SEO from "../../components/SEO";
 import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
@@ -9,6 +12,7 @@ export default function kanieruStudyPlan(props) {
   const { edges } = props.data.allSanityKanieruStudyPlans;
   return (
     <>
+      <SEO title="Mācību plāns (Kaņiera iela)" />
       <Nav paths={KanieruNav} />
       <Header
         headerText={`Mācību plāns`}

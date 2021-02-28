@@ -2,6 +2,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Other components
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
@@ -14,6 +15,7 @@ export default function contacts({ data }) {
 
   return (
     <div>
+      <SEO title="Sazinies ar Mums (Miera iela)" />
       <Nav paths={MieraNav} />
       <Header headerText="Saznies ar Mums" helperText={`Miera ielas filiāle`} />
       <div>

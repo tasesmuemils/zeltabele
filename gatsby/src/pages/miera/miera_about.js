@@ -2,6 +2,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Other components
+import SEO from "../../components/SEO";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
 import { MieraNav } from "../../components/Paths";
@@ -108,6 +109,7 @@ export default function miera_about(props) {
   console.log(nodes[0].AboutDescription_3_party);
   return (
     <div>
+      <SEO title="Par mums (Miera iela)" />
       <Nav paths={MieraNav} />
       <Header headerText={"Par Mums"} helperText={`Miera ielas filiāle`} />
       <MieraAboutStyle>

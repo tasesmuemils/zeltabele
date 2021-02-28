@@ -10,8 +10,10 @@ module.exports = {
   siteMetadata: {
     title: `Zeltābele`,
     description: `Privātā pirmskolas izglītības iestāde "Zeltabele"`,
+    facebook: `@Privātā-pirmsskolas-izglītības-iestāde-Zeltābele-1455396878058055`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,

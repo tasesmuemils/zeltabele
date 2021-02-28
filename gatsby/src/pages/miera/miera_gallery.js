@@ -2,6 +2,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 // Other components
+import SEO from "../../components/SEO";
 import { Gallery } from "../../components/Gallery";
 import Header from "../../components/Header";
 import Nav from "../../components/Nav";
@@ -19,6 +20,7 @@ export default function gallery(props) {
   const { nodes } = props.data.allSanityMieraGallery;
   return (
     <div>
+      <SEO title="Galerija (Miera iela)" />
       <Nav paths={MieraNav} />
       <Header headerText="Galerija" helperText={`Miera ielas filiāle`} />
       <GalleryWrapper>
