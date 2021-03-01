@@ -1,4 +1,5 @@
 export const MainNav = [{ path: "/contacts", text: "Sazinies ar Mums" }];
+export const ContactNav = [{ path: "/", text: "Sākums" }];
 
 export const MieraNav = [
   { path: "/miera/miera_about", text: "Par Mums" },

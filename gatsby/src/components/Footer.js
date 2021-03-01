@@ -23,7 +23,7 @@ const FooterStyle = styled.footer`
 
       h2 {
         padding: 10px 0;
-        color: var(--color-1);
+        color: var(--color-headings);
         border-top: 3px solid var(--color-5);
         transform: translateY(20px);
         transition: 0.5s ease;

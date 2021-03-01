@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Nav from "../components/Nav";
-import { MainNav } from "../components/Paths";
+import { ContactNav } from "../components/Paths";
 import { ContactsInfo } from "../components/ContactsInfo";
 import { TeamMembers } from "../components/Team";
 
@@ -17,7 +17,7 @@ export default function contacts({ data }) {
   return (
     <div>
       <SEO title="Sazinies ar Mums" />
-      <Nav paths={MainNav} />
+      <Nav paths={ContactNav} />
       <Header headerText={`Sazinies ar Mums`} />
       <div>
         <div className="wrap-container Main-content">

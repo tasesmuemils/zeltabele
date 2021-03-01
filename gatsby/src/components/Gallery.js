@@ -135,6 +135,24 @@ const GalleryStyle = styled.div`
 const StyledModal = styled(Modal)`
   .custom-modal-dialog {
     max-width: 700px;
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      letter-spacing: 0px;
+      font-size: 12px;
+      transition: 0.3s ease-in-out;
+      background-color: var(--color-6);
+      border: none;
+      color: var(--white);
+      padding: 5px 10px;
+
+      &:hover {
+        background-color: #2f752a;
+      }
+    }
   }
 
   .carousel-image-height {
@@ -151,8 +169,8 @@ export function Gallery({ galleryData }) {
     //BOOTSTRAP MODAL
     const [show, setShow] = useState(false);
 
-    const handeleClose = () => setShow(false);
-    const handeleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
 
     const imagesInModal = gallery.GalleryImages.map((image, index) => {
       return (
@@ -168,14 +186,16 @@ export function Gallery({ galleryData }) {
           {" "}
           <StyledModal
             show={show}
-            onHide={handeleClose}
+            onHide={handleClose}
             centered
             contentClassName="custom-modal-content"
             dialogClassName="custom-modal-dialog"
+            closeButton
           >
+            <button onClick={handleClose}>Aizvērt</button>
             <Carousel fade={true}>{imagesInModal}</Carousel>
           </StyledModal>
-          <div className="thumb-wrapper" onClick={handeleShow}>
+          <div className="thumb-wrapper" onClick={handleShow}>
             <Img
               className="thumb-style"
               fluid={gallery.GalleryImages[0].asset.fluid}
@@ -195,7 +215,7 @@ export function Gallery({ galleryData }) {
                 : gallery.GalleryDate}
             </p>
             <p className="gallery-text">{gallery.GalleryDescription}</p>
-            <button onClick={handeleShow}>Apskatīt</button>
+            <button onClick={handleShow}>Apskatīt</button>
           </div>
         </div>
       </GalleryStyle>

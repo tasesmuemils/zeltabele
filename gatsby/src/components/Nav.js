@@ -222,9 +222,9 @@ export default function Nav({ paths }) {
               <Menu right noOverlay>
                 {paths.map((path, index) => {
                   return (
-                    <li key={index}>
-                      <Link to={path.path}>{path.text}</Link>
-                    </li>
+                    <Link key={index} to={path.path}>
+                      <li>{path.text}</li>
+                    </Link>
                   );
                 })}
               </Menu>

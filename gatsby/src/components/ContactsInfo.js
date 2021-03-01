@@ -64,7 +64,10 @@ export function ContactsInfo(props) {
         </section>
       </div>
       <div className="contact-info-map">
-        <MapComponent latlng={props.latlngForMap} />
+        <MapComponent
+          address={props.info[0].address}
+          latlng={props.latlngForMap}
+        />
       </div>
     </ContactInfoStyle>
   );
