@@ -501,11 +501,17 @@ const StyledBackgroundSectionFixed = styled(BackgroundImage)`
   position: relative;
   width: 100%;
   height: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
   @media ${device.tablet} {
-    background-size: 100% 100vh;
+    background-attachment: scroll;
+  }
+
+  @supports (-webkit-touch-callout: none) {
+    background-attachment: scroll;
   }
 `;
 
