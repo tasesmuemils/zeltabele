@@ -36,17 +36,17 @@ const ScrollUpStyle = styled.div`
 
   @media ${device.tablet} {
     .iconContainer {
-      bottom: 10px;
+      bottom: 15px;
       div {
-        padding: 5px 12px;
+        padding: 6px 12px;
         .arrow {
-          width: 10px;
+          width: 12px;
         }
       }
     }
 
     .iconTransition {
-      right: 10px;
+      right: 15px;
     }
   }
 `;

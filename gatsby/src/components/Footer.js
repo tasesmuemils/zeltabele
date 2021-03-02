@@ -251,7 +251,10 @@ export default function Footer() {
               <div className="logo-wrapper">
                 <Logo className="logo" />
                 <div className="fb-logo-wrapper">
-                  <a href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/">
+                  <a
+                    title="Zeltabele-Facbook"
+                    href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/"
+                  >
                     <FbLogo className="fb-logo" />
                   </a>
                 </div>

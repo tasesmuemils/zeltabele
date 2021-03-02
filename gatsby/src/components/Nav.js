@@ -45,9 +45,10 @@ const NavStyles = styled.nav`
           display: flex;
           font-size: 20px;
           align-items: center;
-          color: var(--color-1);
+          color: var(--color-headings);
 
           a {
+            color: var(--color-headings);
             position: relative;
             padding: 5px;
           }
@@ -60,7 +61,7 @@ const NavStyles = styled.nav`
             width: 0;
             height: 2px;
             content: "";
-            background: var(--color-1);
+            background: var(--color-headings);
             transition: all 0.2s;
           }
 

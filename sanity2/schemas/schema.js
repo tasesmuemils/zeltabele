@@ -17,6 +17,7 @@ import MieraContacts from "./MieraContacts";
 import KanieruTeam from "./KanieruTeam";
 import MieraTeam from "./MieraTeam";
 import KanieruContacts from "./KanieruContacts";
+import KanieruAbout from "./KanieruAbout";
 
 import month from "./month";
 
@@ -39,6 +40,7 @@ export default createSchema({
         MieraGallery,
         MieraTeam,
         MieraContacts,
+        KanieruAbout,
         KanieruStudyPlans,
         KanieruGallery,
         KanieruTeam,
