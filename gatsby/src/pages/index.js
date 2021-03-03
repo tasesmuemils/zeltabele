@@ -501,21 +501,27 @@ const StyledBackgroundSectionFixed = styled(BackgroundImage)`
   position: relative;
   width: 100%;
   height: 100%;
-  background-position: center center;
+  background-position: auto;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
 
-  @media ${device.tablet} {
-    background-attachment: scroll;
+  &::before,
+  &::after {
+    background-attachment: fixed;
   }
 
-  @supports (-webkit-touch-callout: none) {
+  @media (max-width: 768px) {
     background-attachment: scroll;
+    &::before,
+    &::after {
+      background-attachment: scroll;
+    }
   }
 `;
 
 export default function homePage(props) {
+  // Animations configuration
   let AOS;
 
   useEffect(() => {
