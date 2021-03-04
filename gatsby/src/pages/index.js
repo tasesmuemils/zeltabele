@@ -498,13 +498,13 @@ export const Overlay = styled.div`
 `;
 
 const StyledBackgroundSectionFixed = styled(BackgroundImage)`
-  position: relative;
+  /* position: relative;
   width: 100%;
-  height: 100%;
-  background-position: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  height: 100%; */
+  /* background-position: auto;
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
 
   &::before,
   &::after {
@@ -570,6 +570,7 @@ export default function homePage(props) {
           {/* Image left - text right*/}
           <div className="hp-sections hp-section-2">
             <StyledBackgroundSection
+              style={{ backgroundSize: "contain" }}
               data-aos="slide-right"
               fluid={props.data.homePageInfo.nodes[0].img_d_2.asset.fluid}
             ></StyledBackgroundSection>
