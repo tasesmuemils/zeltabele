@@ -100,7 +100,6 @@ const MieraAboutStyle = styled.div`
 `;
 
 export default function About({ aboutContent }) {
-  console.log(aboutContent[0]);
   return (
     <MieraAboutStyle>
       <div className="wrap-container Main-content">

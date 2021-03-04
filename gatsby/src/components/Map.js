@@ -9,7 +9,6 @@ import {
 } from "react-google-maps";
 
 function Map(props) {
-  console.log(props);
   return (
     <GoogleMap
       defaultZoom={15}
@@ -38,7 +37,6 @@ function Map(props) {
 const WrappedMap = withScriptjs(withGoogleMap(Map));
 
 export function MapComponent(props) {
-  console.log(props);
   return (
     <WrappedMap
       fullscreenControl={false}

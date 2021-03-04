@@ -213,8 +213,6 @@ export default function Footer() {
   const kanieruInfo = data.allSanityKanieruContacts.nodes;
   const mieraInfo = data.allSanityMieraContacts.nodes;
 
-  console.log(kanieruInfo, mieraInfo);
-
   return (
     <FooterStyle>
       <div className="footer-branches">

@@ -42,7 +42,6 @@ const ContactInfoStyle = styled.div`
 `;
 
 export function ContactsInfo(props) {
-  console.log(props);
   return (
     <ContactInfoStyle>
       <div className="contact-info-text">

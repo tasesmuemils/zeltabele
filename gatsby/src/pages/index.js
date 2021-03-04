@@ -25,7 +25,7 @@ const HeroStyle = styled.div`
   overflow-x: hidden;
 `;
 
-//Style for content
+// Style for content
 const MainAboutStyle = styled.div`
   .home-page {
     overflow-x: hidden;
@@ -498,14 +498,6 @@ export const Overlay = styled.div`
 `;
 
 const StyledBackgroundSectionFixed = styled(BackgroundImage)`
-  /* position: relative;
-  width: 100%;
-  height: 100%; */
-  /* background-position: auto;
-  background-repeat: no-repeat; */
-  /* background-size: cover; */
-  /* background-attachment: fixed; */
-
   &::before,
   &::after {
     background-attachment: fixed;
@@ -543,7 +535,6 @@ export default function homePage(props) {
       AOS.refresh();
     }
   });
-  // Aos.init({ duration: 1000, once: true, offset: 70 });
 
   return (
     <>
