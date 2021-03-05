@@ -57,7 +57,10 @@ export default function contacts({ data }) {
 
 export const query = graphql`
   query {
-    allSanityKanieruTeam(filter: { TeamMemberPosition: { eq: "Vadītāja" } }) {
+    allSanityKanieruTeam(
+      filter: { TeamMemberPosition: { ne: "Skolotāja" } }
+      sort: { fields: TeamMemberPosition, order: DESC }
+    ) {
       nodes {
         TeamMemberName
         TeamMemberPosition

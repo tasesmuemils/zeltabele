@@ -14,8 +14,13 @@ export default {
             type: "string",
             options: {
                 list: [
-                    { value: "Vadītāja", title: "Vadītāja" },
-                    { value: "Audzinātāja", title: "Audzinātāja" },
+                    {
+                        title: "Valdes locekle, Vadītāja",
+                        value: "Valdes locekle, Vadītāja",
+                    },
+                    { title: "Valdes locekle", value: "Valdes locekle" },
+                    { title: "Vadītāja", value: "Vadītāja" },
+                    { title: "Skolotāja", value: "Skolotāja" },
                 ],
             },
         },
