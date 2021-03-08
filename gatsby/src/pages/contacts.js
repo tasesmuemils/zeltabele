@@ -8,6 +8,7 @@ import Nav from "../components/Nav";
 import { ContactNav } from "../components/Paths";
 import { ContactsInfo } from "../components/ContactsInfo";
 import { TeamMembers } from "../components/Team";
+import StudyCode from "../components/StudyCode";
 
 export default function contacts({ data }) {
   const ContactsInfoNodesKanieru = data.allSanityKanieruContacts.nodes;
@@ -49,6 +50,11 @@ export default function contacts({ data }) {
             info={ContactsInfoNodesMiera}
             latlngForMap={{ lat: 56.966369, lng: 24.134332 }}
           />
+        </div>
+      </div>
+      <div>
+        <div className="wrap-container Main-content">
+          <StudyCode />
         </div>
       </div>
     </div>

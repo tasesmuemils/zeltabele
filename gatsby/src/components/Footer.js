@@ -5,6 +5,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import Logo from "../assets/logo.svg";
 import FbLogo from "../assets/facebook.svg";
+import YoutubeLogo from "../assets/youtube.svg";
 import { device } from "../components/mediaQueries";
 
 // Footer styling
@@ -114,17 +115,46 @@ const FooterStyle = styled.footer`
           }
         }
 
-        .fb-logo-wrapper {
+        .small-logos-wrapper {
           display: flex;
           justify-content: center;
-          padding-top: 25px;
-          padding-bottom: 5px;
-          background-color: none;
-
-          .fb-logo {
-            width: 25px;
-            height: auto;
+          .small-logo-wrapper {
+            display: flex;
+            justify-content: center;
+            padding: 25px 5px 5px 5px;
             background-color: none;
+
+            .fb-logo {
+              width: 25px;
+              height: auto;
+              background-color: none;
+
+              path:nth-child(1) {
+                transition: 0.3s all;
+              }
+
+              &:hover {
+                path:nth-child(1) {
+                  fill: #4267b2 !important;
+                }
+              }
+            }
+
+            .yt-logo {
+              width: 30px;
+              height: auto;
+              background-color: none;
+
+              path:nth-child(1) {
+                transition: 0.3s all;
+              }
+
+              &:hover {
+                path:nth-child(1) {
+                  fill: #ff0000 !important;
+                }
+              }
+            }
           }
         }
       }
@@ -248,14 +278,29 @@ export default function Footer() {
               </div>
               <div className="logo-wrapper">
                 <Logo className="logo" />
-                <div className="fb-logo-wrapper">
-                  <a
-                    title="Zeltabele-Facbook"
-                    href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/"
-                  >
-                    <FbLogo className="fb-logo" />
-                  </a>
+                <div className="small-logos-wrapper">
+                  <div className="small-logo-wrapper">
+                    <a
+                      title="Zeltabele-Facbook"
+                      href="https://www.facebook.com/Priv%C4%81t%C4%81-pirmsskolas-izgl%C4%ABt%C4%ABbas-iest%C4%81de-Zelt%C4%81bele-1455396878058055/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <FbLogo className="fb-logo" />
+                    </a>
+                  </div>
+                  <div className="small-logo-wrapper">
+                    <a
+                      title="Zeltabele-Youtube"
+                      href="https://www.youtube.com/channel/UCyrPpiDtk1zg4M1ZsJrK1SA"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <YoutubeLogo className="yt-logo" />
+                    </a>
+                  </div>
                 </div>
+
                 <p>&copy; Zeltābele {new Date().getFullYear()}</p>
               </div>
               <div className="miera-footer">

@@ -9,6 +9,7 @@ import Header from "../components/Header";
 import { MainNav } from "../components/Paths";
 import { device } from "../components/mediaQueries";
 import QuotesSVG from "../assets/quote-left.svg";
+import Video from "../components/Video";
 // Styling and background
 import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
@@ -30,7 +31,6 @@ const MainAboutStyle = styled.div`
   .home-page {
     overflow-x: hidden;
     text-align: center;
-
     .welcome-text {
       padding: 100px 500px;
       h2 {
@@ -139,8 +139,7 @@ const MainAboutStyle = styled.div`
     }
 
     .hp-section-6 {
-      display: flex;
-      justify-content: right;
+      display: grid;
 
       .hp-section-6-text {
         display: flex;
@@ -165,6 +164,20 @@ const MainAboutStyle = styled.div`
           color: var(--white);
           font-size: 30px;
         }
+      }
+    }
+
+    .hp-section-7 {
+      padding: 100px 50px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      /* grid-template-rows: 300px; */
+      justify-content: center;
+      text-align: center;
+
+      .hp-7-wrap {
+        display: flex;
+        justify-content: center;
       }
     }
   }
@@ -309,6 +322,12 @@ const MainAboutStyle = styled.div`
             width: 100%;
           }
         }
+      }
+
+      .hp-section-7 {
+        padding: 50px 0;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
@@ -561,7 +580,6 @@ export default function homePage(props) {
           {/* Image left - text right*/}
           <div className="hp-sections hp-section-2">
             <StyledBackgroundSection
-              style={{ backgroundSize: "contain" }}
               data-aos="slide-right"
               fluid={props.data.homePageInfo.nodes[0].img_d_2.asset.fluid}
             ></StyledBackgroundSection>
@@ -590,7 +608,6 @@ export default function homePage(props) {
           {/* Image background, text centered */}
           <div className="hp-sections hp-section-3" data-aos="fade">
             <StyledBackgroundSectionFixed
-              className="fixed"
               fluid={props.data.homePageInfo.nodes[0].img_d_3.asset.fluid}
             >
               <Overlay>
@@ -654,11 +671,7 @@ export default function homePage(props) {
             </div>
           </div>
           {/* Image backgrount, text centered*/}
-          <div
-            data-aos="fade"
-            data-aos-offset="-200"
-            className="hp-sections hp-section-6"
-          >
+          <div data-aos="fade" className="hp-sections hp-section-6">
             <StyledBackgroundSectionFixed
               fluid={props.data.homePageInfo.nodes[0].img_d_6.asset.fluid}
             >
@@ -674,6 +687,25 @@ export default function homePage(props) {
                 </div>
               </Overlay>
             </StyledBackgroundSectionFixed>
+          </div>
+          {/* Youtube videos*/}
+          <div
+            data-aos="fade"
+            // data-aos-offset="-200"
+            className="hp-sections hp-section-7"
+          >
+            <div className="hp-7-wrap">
+              <Video
+                videoSrcURL={`https://www.youtube.com/embed/OQXN1QlqrJY`}
+                videoTitle={`Jājam, jājam`}
+              />
+            </div>
+            <div className="hp-7-wrap">
+              <Video
+                videoSrcURL={`https://www.youtube.com/embed/b2rJt8YsCbY`}
+                videoTitle={`Še tev dālderis`}
+              />
+            </div>
           </div>
         </div>
       </MainAboutStyle>

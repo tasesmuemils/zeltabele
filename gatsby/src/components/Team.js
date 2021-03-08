@@ -3,7 +3,7 @@ import React from "react";
 // Other components
 import { device } from "../components/mediaQueries";
 import Img from "gatsby-image/withIEPolyfill";
-//styling and background
+// Styling and background
 import styled from "styled-components";
 
 const TeamMembersStyle = styled.div`

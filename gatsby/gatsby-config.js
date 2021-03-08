@@ -17,13 +17,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-fonts`,
-    //   options: {
-    //     fonts: [`Nunito`, `Dancing Script`],
-    //     display: "swap",
-    //   },
-    // },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {

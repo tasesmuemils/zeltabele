@@ -29,7 +29,7 @@ const MieraAboutStyle = styled.div`
   .about-main-celebrations {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding-top: 50px;
+    padding-top: 30px;
 
     h2 {
       padding-bottom: 20px;
