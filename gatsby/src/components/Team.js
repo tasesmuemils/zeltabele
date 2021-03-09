@@ -7,17 +7,12 @@ import Img from "gatsby-image/withIEPolyfill";
 import styled from "styled-components";
 
 const TeamMembersStyle = styled.div`
-  /* * {
-    border: 1px solid red;
-  } */
-
   display: grid;
   justify-content: center;
   padding: 20px 0 30px;
   text-align: center;
 
   .title {
-    /* font-size: 40px; */
     color: var(--color-headings);
     padding-bottom: 50px;
   }

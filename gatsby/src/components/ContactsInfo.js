@@ -37,7 +37,7 @@ const ContactInfoStyle = styled.div`
   }
 
   @media ${device.mobileL} {
-    padding: 0 10px 30px 10px;
+    padding: 10px 10px 30px 10px;
   }
 `;
 

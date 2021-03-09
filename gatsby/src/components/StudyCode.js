@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const StudyCodeStyle = styled.div`
   text-align: center;
+  padding: 30px;
 
   // Responsive style
   @media ${device.tablet} {

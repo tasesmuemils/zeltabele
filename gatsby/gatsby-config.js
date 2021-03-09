@@ -12,6 +12,7 @@ module.exports = {
     description: `Privātā pirmskolas izglītības iestāde "Zeltabele"`,
     facebook: `@Privātā-pirmsskolas-izglītības-iestāde-Zeltābele-1455396878058055`,
   },
+  // flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-styled-components`,

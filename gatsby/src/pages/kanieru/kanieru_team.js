@@ -7,24 +7,20 @@ import Nav from "../../components/Nav";
 import { KanieruNav } from "../../components/Paths";
 import Header from "../../components/Header";
 import { TeamMembers } from "../../components/Team";
-import { ContactsInfo } from "../../components/ContactsInfo";
 
-export default function contacts({ data }) {
-  const ContactsInfoNodes = data.allSanityKanieruContacts.nodes;
+export default function kanieruTeam({ data }) {
+  const TeamNodes = data.allSanityKanieruTeam.nodes;
   return (
     <div>
-      <SEO title="Sazinies ar Mums (Kaņiera iela)" />
+      <SEO title="Komanda (Kaņiera iela)" />
       <Nav paths={KanieruNav} />
       <Header
-        headerText="Saznies ar Mums"
+        headerText="Komanda"
         helperText={`Kaņiera ielas filiāle`}
       ></Header>
       <div>
         <div className="wrap-container Main-content">
-          <ContactsInfo
-            info={ContactsInfoNodes}
-            latlngForMap={{ lat: 56.914529, lng: 24.170827 }}
-          />
+          <TeamMembers teamMembers={TeamNodes} />
         </div>
       </div>
     </div>
@@ -33,12 +29,19 @@ export default function contacts({ data }) {
 
 export const query = graphql`
   query {
-    allSanityKanieruContacts {
+    allSanityKanieruTeam(sort: { fields: TeamMemberPosition, order: DESC }) {
       nodes {
-        address
-        phone
-        email
-        work_time
+        TeamMemberName
+        TeamMemberPosition
+        TeamMemberDescription
+        TeamMemberEducation
+        TeamMemberImage {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
       }
     }
   }

@@ -40,7 +40,7 @@ const NavStyles = styled.nav`
         margin: 0;
 
         li {
-          padding: 0px 20px;
+          padding: 0px 15px;
           margin: 0;
           display: flex;
           font-size: 20px;
@@ -86,7 +86,7 @@ const NavStyles = styled.nav`
   }
 
   @media ${device.laptop} {
-    padding: 0px 50px;
+    padding: 0px 30px;
 
     .nav-items-wrapper {
       .navigation {
