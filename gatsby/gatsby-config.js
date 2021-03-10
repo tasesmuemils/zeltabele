@@ -9,7 +9,8 @@ module.exports = {
   /* Your site config here */
   siteMetadata: {
     title: `Zeltābele`,
-    description: `Privātā pirmskolas izglītības iestāde "Zeltabele"`,
+    description: `Privātā pirmskolas izglītības iestāde "Zeltābele"`,
+    siteUrl: `https://www.zeltabele.lv`,
     facebook: `@Privātā-pirmsskolas-izglītības-iestāde-Zeltābele-1455396878058055`,
   },
   // flags: { PRESERVE_WEBPACK_CACHE: true },
