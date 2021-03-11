@@ -42,6 +42,7 @@
     "react-google-maps": "^9.4.5",
     "react-helmet": "^6.1.0",
     "react-image-lightbox": "^5.1.1",
+    "react-lazyload-youtube": "^1.0.5",
     "react-lightbox-component": "^1.2.1",
     "react-modal": "^3.12.1",
     "react-reveal": "^1.2.2",
@@ -63,5 +64,8 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
-  "browserslist": [">0.25%", "not dead"]
+  "browserslist": [
+    ">0.25%",
+    "not dead"
+  ]
 }

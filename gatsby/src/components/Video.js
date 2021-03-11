@@ -44,6 +44,7 @@ export default function Video({ videoSrcURL, videoTitle }) {
       <h2>{videoTitle}</h2>
       <div className="videoWrapper">
         <iframe
+          loading="lazy"
           width="560"
           height="315"
           src={videoSrcURL}
