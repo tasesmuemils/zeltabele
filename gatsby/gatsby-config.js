@@ -12,6 +12,7 @@ module.exports = {
     description: `Privātā pirmskolas izglītības iestāde "Zeltābele"`,
     siteUrl: `https://www.zeltabele.lv`,
     facebook: `@Privātā-pirmsskolas-izglītības-iestāde-Zeltābele-1455396878058055`,
+    keywords: `zeltabele, zeltābele, Zeltābele, Zeltabele, bērnudārzs centrs, bērnudārzs ķengarags, bērnudārzs Rīga`,
   },
   // flags: { PRESERVE_WEBPACK_CACHE: true },
   plugins: [

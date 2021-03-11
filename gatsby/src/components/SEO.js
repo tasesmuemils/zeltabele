@@ -11,6 +11,7 @@ export default function SEO({ children, location, description, title, image }) {
           title
           description
           facebook
+          keywords
         }
       }
     }
@@ -31,6 +32,7 @@ export default function SEO({ children, location, description, title, image }) {
         content="zIGUXBRkIpBCBYrqOHb4UQrObVU_AVPovA1VS7zUtyA"
       />
       <meta name="description" content={site.siteMetadata.description} />
+      <meta name="keywords" content={site.siteMetadata.keywords} />
       {/*Open Graph*/}
       {location && <meta property="og:url" content={location.href} />}
       <meta property="og:image" content={image || "/logo.svg"} />
